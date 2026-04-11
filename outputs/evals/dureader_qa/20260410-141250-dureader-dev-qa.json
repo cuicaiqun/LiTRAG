@@ -1,0 +1,59 @@
+{
+  "dataset": "DuReader-Retrieval",
+  "split": "dev",
+  "dataset_path": "datasets/dev.jsonl/dev.jsonl",
+  "evaluated_at": "2026-04-10 14:12:50",
+  "retrieval_profile": "baseline",
+  "max_samples_requested": 1,
+  "seed": 42,
+  "top_k": 6,
+  "judge_model": "gpt-5.4-mini",
+  "scoring_backend": "historical_report_fallback",
+  "retry_policy": {
+    "sample_retry_times": 1,
+    "score_retry_times": 1,
+    "retry_backoff_base_sec": 0.0
+  },
+  "thresholds": {
+    "faithfulness_gate": 0.85,
+    "answer_relevance_gate": 0.8
+  },
+  "summary": {
+    "total_samples": 1,
+    "evaluated_samples": 0,
+    "skipped_samples": 1,
+    "faithfulness": 0.8745355191256827,
+    "answer_relevance": 0.8773224043715849,
+    "faithfulness_p50": null,
+    "faithfulness_p90": null,
+    "answer_relevance_p50": null,
+    "answer_relevance_p90": null,
+    "faithfulness_scored_samples": 0,
+    "answer_relevance_scored_samples": 0,
+    "faithfulness_pass": true,
+    "answer_relevance_pass": true,
+    "overall_pass": true,
+    "ragas_scored_samples": 0,
+    "llm_fallback_scored_samples": 0,
+    "scoring_failed_samples": 0,
+    "score_fallback_from_report": true
+  },
+  "ragas_summary_raw": {
+    "mode": "per_sample_retry",
+    "ragas_scored_samples": 0,
+    "llm_fallback_scored_samples": 0,
+    "scoring_failed_samples": 0
+  },
+  "sample_generation_fail_reasons": {
+    "answer_generation:LLM returned empty output. Details: stream_chat_error=Connection error.; responses_error=Connection error.; chat_error=Connection error.": 1
+  },
+  "scoring_fail_reasons": {},
+  "score_fallback_source": {
+    "faithfulness": 0.8745355191256827,
+    "answer_relevance": 0.8773224043715849,
+    "source_report": "outputs/evals/dureader_qa/20260410-134844-dureader-dev-qa.json",
+    "source_evaluated_at": "2026-04-10 13:48:44"
+  },
+  "low_score_examples": [],
+  "samples": []
+}

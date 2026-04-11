@@ -1,0 +1,74 @@
+{
+  "ingested/20260409-205418-aae3021f-2026-02-26-160139-cf466be51b.md": {
+    "fingerprint": "cca81f88963abbf8dac8de4a712adfcfa0c1f7b8",
+    "file_hash": "d6e77a64284b862314c061761df04af58643d6d6",
+    "extractor_version": "llm_vision_extract",
+    "compile_prompt_version": "2026-04-09-v1",
+    "target": "sources/ingested-20260409-205418-aae3021f-2026-02-26-160139-cf466be51b.md",
+    "updated_at": "2026-04-10 22:29:08"
+  },
+  "ingested/api-7b42be0dba.md": {
+    "fingerprint": "8983495897f15fc4b53e7fc60b759e39995162cb",
+    "file_hash": "fee86f483700e14e4675b93fbd75e5faadea86b1",
+    "extractor_version": "plain_text",
+    "compile_prompt_version": "2026-04-09-v1",
+    "target": "sources/ingested-api-7b42be0dba.md",
+    "updated_at": "2026-04-10 22:29:16"
+  },
+  "karpathy-llm-wiki-note.md": {
+    "fingerprint": "0f4840a2361c77bfd7fd9ace39b7e6b0cff7c3d7",
+    "file_hash": "d99fa732165934593ead9014dc3aedca20f1c13c",
+    "extractor_version": "raw_text_v1",
+    "compile_prompt_version": "2026-04-09-v1",
+    "target": "sources/karpathy-llm-wiki-note.md",
+    "updated_at": "2026-04-10 22:29:39"
+  },
+  "web/20260409-184755-karpathy-llm-wiki.md": {
+    "fingerprint": "7b6d598e75c5ce7e89a9f1875bfd118867b283c9",
+    "file_hash": "87d96ac52413a403e2e9247b53cc277196be03fe",
+    "extractor_version": "raw_text_v1",
+    "compile_prompt_version": "2026-04-09-v1",
+    "target": "sources/web-20260409-184755-karpathy-llm-wiki.md",
+    "updated_at": "2026-04-10 22:29:57"
+  },
+  "web/20260409-184808-llm-wiki-knowledge-base.md": {
+    "fingerprint": "95f84cf431b2dd8e5218cee88dabbcd0aa64d92a",
+    "file_hash": "4bd7e9298baacc84329d13ff6bce050431c4ef0d",
+    "extractor_version": "raw_text_v1",
+    "compile_prompt_version": "2026-04-09-v1",
+    "target": "sources/web-20260409-184808-llm-wiki-knowledge-base.md",
+    "updated_at": "2026-04-10 22:30:07"
+  },
+  "web/20260409-185253-karpathy-llm-wiki.md": {
+    "fingerprint": "aacb4296dcb5a5a6c22c65952f54e2931e341930",
+    "file_hash": "e1107ed4adf2516f27f3e33d0fcf4f75e0918048",
+    "extractor_version": "raw_text_v1",
+    "compile_prompt_version": "2026-04-09-v1",
+    "target": "sources/web-20260409-185253-karpathy-llm-wiki.md",
+    "updated_at": "2026-04-10 22:30:16"
+  },
+  "web/20260409-194309-item-47fc43ece9.md": {
+    "fingerprint": "45eb4aced2fe645957701426f5776855654f181e",
+    "file_hash": "671768671d1dce57966691b19e6a928c1d810b35",
+    "extractor_version": "raw_text_v1",
+    "compile_prompt_version": "2026-04-09-v1",
+    "target": "sources/web-20260409-194309-item-47fc43ece9.md",
+    "updated_at": "2026-04-10 22:30:26"
+  },
+  "web/20260409-194310-item-47fc43ece9.md": {
+    "fingerprint": "a696483b9a6f8aa8f2d09f5705acb73e9b8b8246",
+    "file_hash": "4d49eb9eea0d0830cd57b8cc3a12a6511e58afcb",
+    "extractor_version": "raw_text_v1",
+    "compile_prompt_version": "2026-04-09-v1",
+    "target": "sources/web-20260409-194310-item-47fc43ece9.md",
+    "updated_at": "2026-04-10 22:30:35"
+  },
+  "ingested/2026-02-26-185801-6235223831.md": {
+    "fingerprint": "f6669f274ce3905603607f13fec10f63bb1cdba6",
+    "file_hash": "96b5f5d80e0801c1284e44dd79e1e1fb610bac18",
+    "extractor_version": "llm_vision_extract",
+    "compile_prompt_version": "2026-04-09-v1",
+    "target": "sources/ingested-2026-02-26-185801-6235223831.md",
+    "updated_at": "2026-04-11 13:48:19"
+  }
+}

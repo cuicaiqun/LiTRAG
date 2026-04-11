@@ -1,0 +1,8 @@
+{
+  "updated_at": "2026-04-11 13:49:14",
+  "chunk_size": 900,
+  "chunk_overlap": 120,
+  "source_pages": 9,
+  "total_chunks": 40,
+  "path": "chunk_index.jsonl"
+}

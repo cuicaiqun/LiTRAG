@@ -1,0 +1,407 @@
+{
+  "dataset": "DuReader-Retrieval",
+  "split": "dev",
+  "dataset_path": "C:/Users/24719/Desktop/rag-skill/datasets/dev.jsonl/dev.jsonl",
+  "evaluated_at": "2026-04-09 21:55:17",
+  "total_samples": 1000,
+  "evaluated_samples": 910,
+  "skipped_samples": 90,
+  "mean_candidates": 49.0,
+  "metrics": {
+    "mrr@10": 0.3444640676783532,
+    "recall@1": 0.1945054945054945,
+    "recall@5": 0.5494505494505495,
+    "recall@10": 0.7527472527472527,
+    "recall@20": 0.9142857142857143,
+    "recall@50": 0.9989010989010989
+  },
+  "failure_examples": [
+    {
+      "query": "国家法定节假日共多少天",
+      "positive_docids": [
+        "1132b79d0bc37fc0d6f975904a8c0343",
+        "2c4fe63d3378ac39907b6b2648eb40c5",
+        "5bc347ff17d488f1704e2893c9e8ecfa",
+        "6e67389d07da8ce02ed97167d23baf9d"
+      ],
+      "top10_docids": [
+        "0b35c2ffdf8ca8b82b7e98a52de3c6d9",
+        "f794a6dc6c26ba7a64d14ddfea5954ff",
+        "24fe7952c6ca57cb585dd21262289890",
+        "af404c0e301d9bab9e021197882e5ae8",
+        "58c00697311c9ad6eb384b6fca7bd12d",
+        "a0ac26837aef3497f4fe08b6243b8eed",
+        "93d7a7af323ed0584ea7af798400e422",
+        "a7856778a116d5d4f4ed12a8003e8101",
+        "e06eb2750f5ed163eb85b6ef02b7c608",
+        "7775fbe10f220aef8e5e6247b6d0f9f9"
+      ]
+    },
+    {
+      "query": "哪个网站有湖南卫视直播",
+      "positive_docids": [
+        "09047f2d4d9485eb1da4ae8486fd7e6d",
+        "64f962153f5572a3f3734d4e3ee64159"
+      ],
+      "top10_docids": [
+        "bc10cfb6bcae9df321839c0846242574",
+        "31a96bd83ada9510b0ecb6ffe4088925",
+        "7a4238810b79fe52f9645b335938dc09",
+        "7410ecaeaabeda31f669b4b08c68617d",
+        "a297032590bd5defa66acc602ef951b5",
+        "b40bb7acf1c2418b70aa6d0239223f16",
+        "0ed2c01ed37eee0ea3eea64d4966c242",
+        "ccd4948fc03a43f256e7e6296727cfa2",
+        "54c7619e35ea2581060d9ddb88326630",
+        "ddc67410adca9a06a605fc9338d081ee"
+      ]
+    },
+    {
+      "query": "为什么要平衡摩擦力",
+      "positive_docids": [
+        "2e2158cdbc6302692bf0c90d66b6b1c1",
+        "a265d966014ff8cbc9455a8ad607d0aa"
+      ],
+      "top10_docids": [
+        "e41f3c815131014413b2737357bb5ecc",
+        "b46d6b5eb922a710f828577c8cea118a",
+        "4c4faf4048a6848442286bcf17f9b94b",
+        "4acc4b460e782f7a0b2310c82f6efc96",
+        "9e523ac4c957f19158eb64731852c36b",
+        "8147216ffa0ae804f95a69210dd9d0c3",
+        "0272bf92d12368fe02eb33e3202b528e",
+        "4d83b80a6aea9cd7df76f843dc41b30c",
+        "16ae813144c63ea51614640c1b081368",
+        "c50f26d119f5b242c4d77131275d7053"
+      ]
+    },
+    {
+      "query": "覆铜面板是什么",
+      "positive_docids": [
+        "0045f9336bac80891ea597253ea218cf",
+        "80226037b2d33bf1d961e2dfe5319d97",
+        "ab9eb95e10cc4dec4953d68a996ac825"
+      ],
+      "top10_docids": [
+        "0c16dc4c82e2a2206babc2864cf9b45a",
+        "0a652dd01b0146b6b6fdbd4045563670",
+        "9ca869caa3f489e14b6b4e887795eeea",
+        "69c3ec844cd417e51e4a1f1abd7af72b",
+        "467d110a6fe4c63a44cc845c8c3a2090",
+        "ae7679e056d3b9262b0efc3678ec3788",
+        "0dca6af7ea233f2931c562f1cd2e7842",
+        "7ed00bbf467536801a3fe30a4776dafb",
+        "e45e37cd1e1a47d4feeb52bf35b8fea6",
+        "f4eeef97b195a38a45434cc5e6e4fcb1"
+      ]
+    },
+    {
+      "query": "怎么屏蔽qq新闻弹窗",
+      "positive_docids": [
+        "5ec4a2a6689550e67ad1bbe54f473edb",
+        "de75182f37a37e29f98dfbf69ba59086"
+      ],
+      "top10_docids": [
+        "31cd7c34a425f4e3a0601eaf4c27d069",
+        "72d3c22466d781a41016715a00c20cae",
+        "3f018c68f751238af0d4fa307d38a5b7",
+        "dfa74998336b5bef01921041e4a90601",
+        "e3e48fa50aeb25d2e979b4ed7e233af1",
+        "0bdde12f43ee94a663f1370f4c4c2875",
+        "46e4badb5bd7d6465e09818ce3a0882a",
+        "b04ea8fd55748cde8a6fd75c47824197",
+        "b049bc8f365a43b15210f4367a7b715c",
+        "66a0786f9914c649713a4f7fbb67a71e"
+      ]
+    },
+    {
+      "query": "子宫瘢痕向内凹陷形成一腔隙可以怀孕吗?",
+      "positive_docids": [
+        "854073b166651c4bcd81e77327796635",
+        "a163e676d4aacb81b61cafb02bfce966"
+      ],
+      "top10_docids": [
+        "bfb517b5e7b4f8850bccdfec07272c4a",
+        "150e72fa9ce3df0b82a9ef237732bb4b",
+        "ffb2da65084bb4963e2053462a815f99",
+        "2b7a7672289eebaaffccd74953934583",
+        "f617aba38341906702b7d65a8956eecc",
+        "536281662f83de975eb100b15da226b6",
+        "38e7d7265085096eca28a482e3e6cb73",
+        "8bb80b324611379eac3e83ffb5000870",
+        "02c1c9abb231150db7025414abb044f6",
+        "81a14cc96b077772de53184a3408947a"
+      ]
+    },
+    {
+      "query": "eve回电是什么",
+      "positive_docids": [
+        "6dddded28d2d08edae67d48749bdc125"
+      ],
+      "top10_docids": [
+        "cb659150438bd71e84bd6d30432fd010",
+        "18d5851ab62a93238ac1a79c08915ba8",
+        "6b7af40e91c920eaa008f6d9121079eb",
+        "592415204ab575c28f07df8cdc54706e",
+        "2f114ef8b2d6b64dcd8356daa857e5c2",
+        "a90d55a0d17ed2d74afde5f6cef9dfe8",
+        "c0aca1cdc7591a3d96284fc15458f334",
+        "6799ded9ba26636fdedf6b2c2ac2d368",
+        "ae04ba54715a23829560a9044ae39482",
+        "a5c536555ec1c14769643f4346e16c84"
+      ]
+    },
+    {
+      "query": "子宫内膜息肉术后多久来月经",
+      "positive_docids": [
+        "2461af2bccaadb18a5298be37dcce4af",
+        "a3cbf224e36c55007dfc7ce125a832dd"
+      ],
+      "top10_docids": [
+        "e34f216c80f73eadda1b1b64e0bb9483",
+        "17b6adc0904d97d3b1e7559aaa494a56",
+        "1594d075f74b5ff267feca0a9234288e",
+        "05c0f7fb76c27f95a07c1d253a0dc01b",
+        "88086fea731e9d1497a272e4263a8980",
+        "e0dd4bc1b72c62b5b178afba2a090d7b",
+        "322e413535937d20ae991fdbf886781b",
+        "041ca7dca192836e3f85e466a0e37157",
+        "e7bddd70eb905dbd0ec233080fd36765",
+        "506ad4f6448d1b016070dd2b25a8463b"
+      ]
+    },
+    {
+      "query": "达克宁栓3粒装用几个疗程",
+      "positive_docids": [
+        "d5b488776a222286de2b4e7255a37628"
+      ],
+      "top10_docids": [
+        "35d4da159bdf239176f71f0be3bc6e46",
+        "d0cce56d8e850a60b6c247fbc7a66237",
+        "9dd2579b31275d88b8133d104b538e30",
+        "0d235352ef9a7d541ba71d6e120f94fb",
+        "528880ee3cf10e3f761965fd6485239b",
+        "909f9eeac41adbd74f047ad15b2b08ae",
+        "2f5447e33fe579d21ee2f01f4c74f283",
+        "7fb74763a6b868c63ae834bffc46a498",
+        "8c69510c7da4071e1ad4b116e364f261",
+        "fc5b1fc29edc62711a4209566b5f359a"
+      ]
+    },
+    {
+      "query": "windows media player不见了",
+      "positive_docids": [
+        "e1e3ea8e7282ac51615c57117076d2cd"
+      ],
+      "top10_docids": [
+        "a8b5a8ed7d78eafede6b19a2d9ee4974",
+        "f9930801a23515132fa8c449928f22a4",
+        "6ae403ccecb1d433ef16eaeb6fe984cc",
+        "9c213501bfef69a10087debb09620133",
+        "856ca8689b17d60be745c7b5efa86c2c",
+        "73bdb6af51fc165213201e0d372d2bce",
+        "cd6c50541e33a32315b77e875723378d",
+        "5db97e8efd7526a20521730320badcc4",
+        "509c57b76087fd3b88dcacc54c76c247",
+        "061cdbab6dc7249343cfadca235833f3"
+      ]
+    },
+    {
+      "query": "消灾吉祥神咒意思",
+      "positive_docids": [
+        "558fd4b68e78564b6cbfe93744a909c2"
+      ],
+      "top10_docids": [
+        "0f0570dcc5e90c115180dc74cf8e1aa0",
+        "638965dda725aab509d0efaff5d0c558",
+        "1dcdb127eb2c21e3bdeb3704da3d3e2e",
+        "577ff9526c8e1dd09b8569355ed97dab",
+        "68dd47c0e677832ceea00b3cfff18bed",
+        "85e45c56c2dcc0f2d45199c974c89c43",
+        "714d1d0a3ddce2810304fd20b3f0d436",
+        "1bf0ce09c497246edfa90a5f9b6bc596",
+        "662bd8f2746fccfb13c8b301c797023c",
+        "a13c8ca1d47b58a3fc4cc427140bef9c"
+      ]
+    },
+    {
+      "query": "excel表格右边没有边框",
+      "positive_docids": [
+        "6a61e8feb095f328575e1beb636ed4ad",
+        "b1c8cb19787c8ee53dfd437aa49ce1b4",
+        "b5e5be40ee70281813c583a7c55004f6"
+      ],
+      "top10_docids": [
+        "063589b6e55f6b7300d4ee74dc9f4c8d",
+        "c7165daf928f8e3207b8329ad5896be6",
+        "59743e784b2630520fd81bafab8f315c",
+        "64cc061a46c4f886e6381eb77886fc71",
+        "4ce29737a25a4579ebc5871249472e3b",
+        "dffb86ed7da9dc2731a1e0ee20b04047",
+        "e6c26744caf7cb1aa5326d93854b792a",
+        "1117c509f832350cd0d948ecd9b48a1a",
+        "ea18410fdf87eb38cd958600bc89d200",
+        "5ba1c17e01856ecddefe8c1bd0b466fc"
+      ]
+    },
+    {
+      "query": "c盘是硬盘吗",
+      "positive_docids": [
+        "4ab1cb3dce9817421e7184085c47225e",
+        "7ea9594e25453561b4a8b24b031ca937",
+        "c3a43c692a8968b290acaddb024989e9",
+        "c4d7472e6af3e9cb2a2166a75a17ae41"
+      ],
+      "top10_docids": [
+        "d3d8e7b96be37d1e4499776efe761d96",
+        "8427503c6f8b906a3fb2ac23508fc385",
+        "ded5550a2f2791a0945c06f44a7497c3",
+        "7c4a925d1ea6439a33ef79f7c2676019",
+        "6d2d2dcc19461c29b59b254e5d25a43e",
+        "db77814e110a023c72c1188a266f9433",
+        "24396507a3148829809e6c02ddbd0d58",
+        "825fe2e8477462d4ba5de3c0945b3750",
+        "0c9d4fb5dba052e29348a39e4edd6999",
+        "ff665512abe242acbad9d21cba4c4eeb"
+      ]
+    },
+    {
+      "query": "温泉蛋怎么做",
+      "positive_docids": [
+        "4e03cafe88598761ff92b27028082610",
+        "a6f89752f30d22c8f01750fdf379a58a",
+        "ab3c8640f8022ed0a4055671d4f542e8",
+        "ec4f253187209c1c12b2cc0c5a2f0c5d",
+        "f9208e3030279414373a087592935c04"
+      ],
+      "top10_docids": [
+        "3829ddface97609d0ba75bc980cff0e6",
+        "bc4c7743a83ed573c019cf3772c66215",
+        "9f3e17e9d8469072e54edd53acd47b3e",
+        "bf84e5d8414271532e8e947387a0f132",
+        "4801b2dbf9c534b05b35983dc114d86e",
+        "ab7528b2e5d9679b37ae31f02791800d",
+        "2a26593e5d0a506a566bd6224e6bb965",
+        "dd39113eca0eaba473adc4007344f4b2",
+        "34b474b1489b784789305e14a13c36a4",
+        "d690786a17c2213ee9c06d286f77cee2"
+      ]
+    },
+    {
+      "query": "均瑶集团是上市公司吗",
+      "positive_docids": [
+        "164dc7a955bd7cd1f952e3dec0d29afa",
+        "534e284ad58fa8d3b3bc3a773e9740d6",
+        "8494766de10401004bbc59d4ceba94cc"
+      ],
+      "top10_docids": [
+        "9f3ea311417ecd26966731fb5cb5df59",
+        "bf0d66fa1bd0d997d4ce8b055fdd2140",
+        "7d1fc4197bf351e24f547006b73fc582",
+        "63025b51e0634a5c9f91bc8ebe853bdb",
+        "8b3fe3f6b7d9af09bbb75e4a18aa403d",
+        "5960495c7ace46c59864861fc4871310",
+        "8f003888df98763b472dfe469d756a26",
+        "451656bf566c32004426c608b6db4304",
+        "03598ae7739d2dea225668996af024e3",
+        "67938fd6e440ab3d38e022c7ba4a5fde"
+      ]
+    },
+    {
+      "query": "微信不提示升级",
+      "positive_docids": [
+        "1a944d064f362b811adba6a9a9fc8991",
+        "31e8652dd42d184b042fde05055d0b10"
+      ],
+      "top10_docids": [
+        "d30fd48800fee90c34266781c2c4695e",
+        "741e10541d5a35a6139977fef749e065",
+        "001d9ad7d48596365532aa8fca0a44d9",
+        "9958ef035dcc07a8063deae87e61566f",
+        "39730176ac239027919d090701d64251",
+        "902f936dc3ba12114ae11b3966332ed4",
+        "910d7ea5815466c2c363b6fa93e60b76",
+        "156fb5ae957301e5b6a55359a0606776",
+        "a41b1518db0a0980f03d71bb391b04c8",
+        "8ed3e73dc343333cc3e89de52aaacf96"
+      ]
+    },
+    {
+      "query": "怎样识别电位器型号",
+      "positive_docids": [
+        "6511bdd8a88f83b06dae2d7ee2dbef7e"
+      ],
+      "top10_docids": [
+        "871b89adb59561b4bdee97d71e4f1ca0",
+        "ada557ba22ae1c7a6fd01d18c731d1e0",
+        "3ce7b4ac7d658ba5651d19c37a57c5cd",
+        "7ad7532aee8c5847530703d87843b130",
+        "79897ae8709025728e9f4615e46b71e7",
+        "130c371f82de84581ff409718334a19e",
+        "a24c6a2a6678b2436a4e2c686ce44390",
+        "f36e9349897c89bd68e905c2de56cc63",
+        "c4ebb4a92e0dbb3de325b32ff9ef07e5",
+        "4f201fa9b45e19124df3b7d799159af0"
+      ]
+    },
+    {
+      "query": "淘宝优缺点",
+      "positive_docids": [
+        "4fe093f98c23c01578a0f06a81291ee6",
+        "5bf29305f04ecead4c0e82a33bfeace6",
+        "6ff1f29936eb60c7b0e7ef082552b7a6"
+      ],
+      "top10_docids": [
+        "3ce8fe72dfd26196b206aefa9a781af1",
+        "fbdf7996b2961cc4486512e0149012eb",
+        "d49ab66ea630d637283572c0fc104a36",
+        "24177e1b596f4782d816e687d3f4d3b7",
+        "7318df72e54f0baeea3fd5858c47b093",
+        "8397b2e183f0d84ae9af601f0f6c2836",
+        "fbc2fa8c7af267786a300a099b67f681",
+        "1c880d119b43a9541b30c18b12391441",
+        "dfbe6564ab5219701ccb1b39c73a03e8",
+        "8f6741f33f7e306fdc2b1217daac4516"
+      ]
+    },
+    {
+      "query": "苹果手机抖屏怎么办",
+      "positive_docids": [
+        "7e918f70a13955da20fa127c3741592c"
+      ],
+      "top10_docids": [
+        "b3cd6d4faaa82bec93ded5651dabc1d0",
+        "d991b807206aca263fcc39fc56a86c83",
+        "e4271b01bcc91bb349ace3c3eeda5845",
+        "ec23b2ba4567d5b38c1dcf0bd9beae3d",
+        "7bcd9a97f18efe4640142c38602c3e85",
+        "9c081a90c0cd336589a0c6733fbb27c3",
+        "f2db4ba35e04b73aa627043c9347d19d",
+        "08b0a03a6dc8a995bd6b152e6551c680",
+        "cd04ec78f9bcbc963a0cbfa72180cda7",
+        "7c855eb377ae95b83f232702ed20c7e6"
+      ]
+    },
+    {
+      "query": "生完孩子掉发怎么办",
+      "positive_docids": [
+        "48acbfe3b60ec8153223e58a04914d08",
+        "681c53aca0d7047670b9da5728cb2129",
+        "b41c34f9578a7804998955835e7a61f8",
+        "cddc59b59ab040a6ad72fb79ecd2afea"
+      ],
+      "top10_docids": [
+        "a16ccca912aee1febfc1b0a5e71f28ee",
+        "786aeef663e17619108cd500d1c4b36e",
+        "bd9a788c0ff8a7adf28305db7b8ce110",
+        "034a0516249c3b163752040a82e69ca5",
+        "9368b262b69731eeaa413155c8d3db72",
+        "6207a1134566f6990361fda807fc53d8",
+        "cbcd069340c0048fba7257720edabbe3",
+        "6b97fb4846646b6ed5dc4c465bda74e4",
+        "a81d613c6885100efdc103abb53e6574",
+        "7f5a06d13a8a16aaede8026b764d3ac9"
+      ]
+    }
+  ]
+}

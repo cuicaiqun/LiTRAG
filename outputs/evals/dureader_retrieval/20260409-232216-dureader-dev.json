@@ -1,0 +1,191 @@
+{
+  "dataset": "DuReader-Retrieval",
+  "split": "dev",
+  "dataset_path": "C:/Users/24719/Desktop/rag-skill/datasets/dev.jsonl/dev.jsonl",
+  "evaluated_at": "2026-04-09 23:22:16",
+  "retrieval_profile": "baseline",
+  "ablation": false,
+  "profiles": {
+    "baseline": {
+      "total_samples": 20,
+      "evaluated_samples": 19,
+      "skipped_samples": 1,
+      "mean_candidates": 48.68421052631579,
+      "mrr@10": 0.2993943191311612,
+      "recall@1": 0.21052631578947367,
+      "recall@5": 0.3157894736842105,
+      "recall@10": 0.5789473684210527,
+      "recall@20": 0.8421052631578947,
+      "recall@50": 1.0,
+      "rerank_used_ratio": 0.0,
+      "degraded_ratio": 0.0,
+      "applied_profile_counts": {
+        "baseline": 19
+      },
+      "failure_examples": [
+        {
+          "query": "国家法定节假日共多少天",
+          "positive_docids": [
+            "1132b79d0bc37fc0d6f975904a8c0343",
+            "2c4fe63d3378ac39907b6b2648eb40c5",
+            "5bc347ff17d488f1704e2893c9e8ecfa",
+            "6e67389d07da8ce02ed97167d23baf9d"
+          ],
+          "top10_docids": [
+            "ea412c7366ba5d52b0e26487ac1d79f1",
+            "f794a6dc6c26ba7a64d14ddfea5954ff",
+            "24fe7952c6ca57cb585dd21262289890",
+            "0b35c2ffdf8ca8b82b7e98a52de3c6d9",
+            "93d7a7af323ed0584ea7af798400e422",
+            "a0ac26837aef3497f4fe08b6243b8eed",
+            "7775fbe10f220aef8e5e6247b6d0f9f9",
+            "58c00697311c9ad6eb384b6fca7bd12d",
+            "af404c0e301d9bab9e021197882e5ae8",
+            "4db2d64ea8cb87db9bc7aec3030a2b94"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "哪个网站有湖南卫视直播",
+          "positive_docids": [
+            "09047f2d4d9485eb1da4ae8486fd7e6d",
+            "64f962153f5572a3f3734d4e3ee64159"
+          ],
+          "top10_docids": [
+            "bc10cfb6bcae9df321839c0846242574",
+            "31a96bd83ada9510b0ecb6ffe4088925",
+            "7a4238810b79fe52f9645b335938dc09",
+            "a297032590bd5defa66acc602ef951b5",
+            "93847a2f5ea63e5ec2cabfff449dbbd2",
+            "54c7619e35ea2581060d9ddb88326630",
+            "ddc67410adca9a06a605fc9338d081ee",
+            "ef8b2f56a140666b2b09a6294f97ab13",
+            "ccd4948fc03a43f256e7e6296727cfa2",
+            "0ed2c01ed37eee0ea3eea64d4966c242"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "覆铜面板是什么",
+          "positive_docids": [
+            "0045f9336bac80891ea597253ea218cf",
+            "80226037b2d33bf1d961e2dfe5319d97",
+            "ab9eb95e10cc4dec4953d68a996ac825"
+          ],
+          "top10_docids": [
+            "0c16dc4c82e2a2206babc2864cf9b45a",
+            "ae7679e056d3b9262b0efc3678ec3788",
+            "69c3ec844cd417e51e4a1f1abd7af72b",
+            "0a652dd01b0146b6b6fdbd4045563670",
+            "f4eeef97b195a38a45434cc5e6e4fcb1",
+            "0dca6af7ea233f2931c562f1cd2e7842",
+            "3babb065d41d1b2fe906680d6a81b2b5",
+            "7ed00bbf467536801a3fe30a4776dafb",
+            "9ca869caa3f489e14b6b4e887795eeea",
+            "952beb302ca0cb8ada661621875116ea"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "怎么屏蔽qq新闻弹窗",
+          "positive_docids": [
+            "5ec4a2a6689550e67ad1bbe54f473edb",
+            "de75182f37a37e29f98dfbf69ba59086"
+          ],
+          "top10_docids": [
+            "31cd7c34a425f4e3a0601eaf4c27d069",
+            "dfa74998336b5bef01921041e4a90601",
+            "46a26ea2ee278348d01d190501685c36",
+            "5facdbd71bd3329c8d6c625e981a9009",
+            "8e0bb395f32833b8b624f24d710aab76",
+            "46e4badb5bd7d6465e09818ce3a0882a",
+            "0bdde12f43ee94a663f1370f4c4c2875",
+            "9ac6726a916688ba882549e3e524c350",
+            "efd5a27985a926d3bffd5ba102faad61",
+            "46d0337d09e728063b80e23dd23d95d9"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "艾滋病潜伏期能治吗",
+          "positive_docids": [
+            "a4d72abaef4e15029c0249bdcbc4734c"
+          ],
+          "top10_docids": [
+            "639028d4b8401ae6ec373a0dc0d4277b",
+            "3d4802ec3883e1e60ec2acada46d2ffb",
+            "504bae4daef9d9c5f4ced52aec4437e3",
+            "a4b77353be22397abcb48ba459ea0032",
+            "acccf198cb8d6f53a0d851901995b08f",
+            "e88f701a6584f28e3d712aa4f25c1766",
+            "f2ea57e4b0995aa98a0eb859ccd423df",
+            "2802c5f5b55b4548bf7edffc21693a81",
+            "77e638bf800155e474868ae56faef72b",
+            "7d39a011e46fe552122506c081407e45"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "子宫瘢痕向内凹陷形成一腔隙可以怀孕吗?",
+          "positive_docids": [
+            "854073b166651c4bcd81e77327796635",
+            "a163e676d4aacb81b61cafb02bfce966"
+          ],
+          "top10_docids": [
+            "150e72fa9ce3df0b82a9ef237732bb4b",
+            "bfb517b5e7b4f8850bccdfec07272c4a",
+            "ffb2da65084bb4963e2053462a815f99",
+            "2b7a7672289eebaaffccd74953934583",
+            "8b0b62c961b62172428f2affa0e659a7",
+            "a38cbf339429c95ddad2c19297954082",
+            "8bb80b324611379eac3e83ffb5000870",
+            "02c1c9abb231150db7025414abb044f6",
+            "f617aba38341906702b7d65a8956eecc",
+            "db139ff9db4c302b5a9f30b705edcdec"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "cad设计签名怎么弄上去的",
+          "positive_docids": [
+            "9999121d19a8ce057a9bf3dbaa4ffc93",
+            "a89682755d47e897847302dcb4812136",
+            "aaec1acd55cfe816d85ae0abe07df120"
+          ],
+          "top10_docids": [
+            "513ac5b0f853d12ca8799c39822cc5ac",
+            "7a610196a8972dcfcd32c9ee7addbdcf",
+            "c69581292aa3e0c56964fa9002f1b1fd",
+            "202d7b0b546af8bef5761512c7104009",
+            "49849a4fffa46b4bdc15d9d3d14dd9b6",
+            "7ddc6effd930bad84ea2f887434ad768",
+            "dc48d4c2517272d58b180576e71ed22b",
+            "599904240976a4ffdf447392862bc57e",
+            "e85a835d151b204d215e534891c09942",
+            "3633b024d9b1a6fc730290777e3b804a"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "eve回电是什么",
+          "positive_docids": [
+            "6dddded28d2d08edae67d48749bdc125"
+          ],
+          "top10_docids": [
+            "18d5851ab62a93238ac1a79c08915ba8",
+            "cb659150438bd71e84bd6d30432fd010",
+            "592415204ab575c28f07df8cdc54706e",
+            "a90d55a0d17ed2d74afde5f6cef9dfe8",
+            "6799ded9ba26636fdedf6b2c2ac2d368",
+            "25395446ad29977021e4d06930ec6eb7",
+            "ab4ea8d8467f21abe3300c5457c0ef27",
+            "2f114ef8b2d6b64dcd8356daa857e5c2",
+            "d0aedba01b8791ba3c6b873c11a39454",
+            "d9deecebb8312deffec5ff1d523071d6"
+          ],
+          "applied_profile": "baseline"
+        }
+      ]
+    }
+  }
+}

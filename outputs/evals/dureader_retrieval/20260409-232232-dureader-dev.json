@@ -1,0 +1,193 @@
+{
+  "dataset": "DuReader-Retrieval",
+  "split": "dev",
+  "dataset_path": "C:/Users/24719/Desktop/rag-skill/datasets/dev.jsonl/dev.jsonl",
+  "evaluated_at": "2026-04-09 23:22:32",
+  "retrieval_profile": "baseline",
+  "ablation": true,
+  "profiles": {
+    "baseline": {
+      "total_samples": 5,
+      "evaluated_samples": 5,
+      "skipped_samples": 0,
+      "mean_candidates": 49.0,
+      "mrr@10": 0.32857142857142857,
+      "recall@1": 0.2,
+      "recall@5": 0.4,
+      "recall@10": 0.6,
+      "recall@20": 0.8,
+      "recall@50": 1.0,
+      "rerank_used_ratio": 0.0,
+      "degraded_ratio": 0.0,
+      "applied_profile_counts": {
+        "baseline": 5
+      },
+      "failure_examples": [
+        {
+          "query": "国家法定节假日共多少天",
+          "positive_docids": [
+            "1132b79d0bc37fc0d6f975904a8c0343",
+            "2c4fe63d3378ac39907b6b2648eb40c5",
+            "5bc347ff17d488f1704e2893c9e8ecfa",
+            "6e67389d07da8ce02ed97167d23baf9d"
+          ],
+          "top10_docids": [
+            "ea412c7366ba5d52b0e26487ac1d79f1",
+            "f794a6dc6c26ba7a64d14ddfea5954ff",
+            "24fe7952c6ca57cb585dd21262289890",
+            "0b35c2ffdf8ca8b82b7e98a52de3c6d9",
+            "93d7a7af323ed0584ea7af798400e422",
+            "a0ac26837aef3497f4fe08b6243b8eed",
+            "7775fbe10f220aef8e5e6247b6d0f9f9",
+            "58c00697311c9ad6eb384b6fca7bd12d",
+            "af404c0e301d9bab9e021197882e5ae8",
+            "4db2d64ea8cb87db9bc7aec3030a2b94"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "哪个网站有湖南卫视直播",
+          "positive_docids": [
+            "09047f2d4d9485eb1da4ae8486fd7e6d",
+            "64f962153f5572a3f3734d4e3ee64159"
+          ],
+          "top10_docids": [
+            "bc10cfb6bcae9df321839c0846242574",
+            "31a96bd83ada9510b0ecb6ffe4088925",
+            "7a4238810b79fe52f9645b335938dc09",
+            "a297032590bd5defa66acc602ef951b5",
+            "93847a2f5ea63e5ec2cabfff449dbbd2",
+            "54c7619e35ea2581060d9ddb88326630",
+            "ddc67410adca9a06a605fc9338d081ee",
+            "ef8b2f56a140666b2b09a6294f97ab13",
+            "ccd4948fc03a43f256e7e6296727cfa2",
+            "0ed2c01ed37eee0ea3eea64d4966c242"
+          ],
+          "applied_profile": "baseline"
+        }
+      ]
+    },
+    "hybrid_no_rerank": {
+      "total_samples": 5,
+      "evaluated_samples": 5,
+      "skipped_samples": 0,
+      "mean_candidates": 49.0,
+      "mrr@10": 0.32857142857142857,
+      "recall@1": 0.2,
+      "recall@5": 0.4,
+      "recall@10": 0.6,
+      "recall@20": 0.8,
+      "recall@50": 1.0,
+      "rerank_used_ratio": 0.0,
+      "degraded_ratio": 1.0,
+      "applied_profile_counts": {
+        "baseline": 5
+      },
+      "failure_examples": [
+        {
+          "query": "国家法定节假日共多少天",
+          "positive_docids": [
+            "1132b79d0bc37fc0d6f975904a8c0343",
+            "2c4fe63d3378ac39907b6b2648eb40c5",
+            "5bc347ff17d488f1704e2893c9e8ecfa",
+            "6e67389d07da8ce02ed97167d23baf9d"
+          ],
+          "top10_docids": [
+            "ea412c7366ba5d52b0e26487ac1d79f1",
+            "f794a6dc6c26ba7a64d14ddfea5954ff",
+            "24fe7952c6ca57cb585dd21262289890",
+            "0b35c2ffdf8ca8b82b7e98a52de3c6d9",
+            "93d7a7af323ed0584ea7af798400e422",
+            "a0ac26837aef3497f4fe08b6243b8eed",
+            "7775fbe10f220aef8e5e6247b6d0f9f9",
+            "58c00697311c9ad6eb384b6fca7bd12d",
+            "af404c0e301d9bab9e021197882e5ae8",
+            "4db2d64ea8cb87db9bc7aec3030a2b94"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "哪个网站有湖南卫视直播",
+          "positive_docids": [
+            "09047f2d4d9485eb1da4ae8486fd7e6d",
+            "64f962153f5572a3f3734d4e3ee64159"
+          ],
+          "top10_docids": [
+            "bc10cfb6bcae9df321839c0846242574",
+            "31a96bd83ada9510b0ecb6ffe4088925",
+            "7a4238810b79fe52f9645b335938dc09",
+            "a297032590bd5defa66acc602ef951b5",
+            "93847a2f5ea63e5ec2cabfff449dbbd2",
+            "54c7619e35ea2581060d9ddb88326630",
+            "ddc67410adca9a06a605fc9338d081ee",
+            "ef8b2f56a140666b2b09a6294f97ab13",
+            "ccd4948fc03a43f256e7e6296727cfa2",
+            "0ed2c01ed37eee0ea3eea64d4966c242"
+          ],
+          "applied_profile": "baseline"
+        }
+      ]
+    },
+    "hybrid_rerank": {
+      "total_samples": 5,
+      "evaluated_samples": 5,
+      "skipped_samples": 0,
+      "mean_candidates": 49.0,
+      "mrr@10": 0.32857142857142857,
+      "recall@1": 0.2,
+      "recall@5": 0.4,
+      "recall@10": 0.6,
+      "recall@20": 0.8,
+      "recall@50": 1.0,
+      "rerank_used_ratio": 0.0,
+      "degraded_ratio": 1.0,
+      "applied_profile_counts": {
+        "baseline": 5
+      },
+      "failure_examples": [
+        {
+          "query": "国家法定节假日共多少天",
+          "positive_docids": [
+            "1132b79d0bc37fc0d6f975904a8c0343",
+            "2c4fe63d3378ac39907b6b2648eb40c5",
+            "5bc347ff17d488f1704e2893c9e8ecfa",
+            "6e67389d07da8ce02ed97167d23baf9d"
+          ],
+          "top10_docids": [
+            "ea412c7366ba5d52b0e26487ac1d79f1",
+            "f794a6dc6c26ba7a64d14ddfea5954ff",
+            "24fe7952c6ca57cb585dd21262289890",
+            "0b35c2ffdf8ca8b82b7e98a52de3c6d9",
+            "93d7a7af323ed0584ea7af798400e422",
+            "a0ac26837aef3497f4fe08b6243b8eed",
+            "7775fbe10f220aef8e5e6247b6d0f9f9",
+            "58c00697311c9ad6eb384b6fca7bd12d",
+            "af404c0e301d9bab9e021197882e5ae8",
+            "4db2d64ea8cb87db9bc7aec3030a2b94"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "哪个网站有湖南卫视直播",
+          "positive_docids": [
+            "09047f2d4d9485eb1da4ae8486fd7e6d",
+            "64f962153f5572a3f3734d4e3ee64159"
+          ],
+          "top10_docids": [
+            "bc10cfb6bcae9df321839c0846242574",
+            "31a96bd83ada9510b0ecb6ffe4088925",
+            "7a4238810b79fe52f9645b335938dc09",
+            "a297032590bd5defa66acc602ef951b5",
+            "93847a2f5ea63e5ec2cabfff449dbbd2",
+            "54c7619e35ea2581060d9ddb88326630",
+            "ddc67410adca9a06a605fc9338d081ee",
+            "ef8b2f56a140666b2b09a6294f97ab13",
+            "ccd4948fc03a43f256e7e6296727cfa2",
+            "0ed2c01ed37eee0ea3eea64d4966c242"
+          ],
+          "applied_profile": "baseline"
+        }
+      ]
+    }
+  }
+}

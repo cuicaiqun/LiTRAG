@@ -1,0 +1,86 @@
+{
+  "dataset": "DuReader-Retrieval",
+  "split": "dev",
+  "dataset_path": "datasets/dev.jsonl/dev.jsonl",
+  "evaluated_at": "2026-04-10 12:07:29",
+  "retrieval_profile": "baseline",
+  "max_samples_requested": 1,
+  "seed": 42,
+  "top_k": 3,
+  "judge_model": "gpt-5.4-mini",
+  "thresholds": {
+    "faithfulness_gate": 0.85,
+    "answer_relevance_gate": 0.8
+  },
+  "summary": {
+    "total_samples": 1,
+    "evaluated_samples": 1,
+    "skipped_samples": 0,
+    "faithfulness": null,
+    "answer_relevance": null,
+    "faithfulness_p50": null,
+    "faithfulness_p90": null,
+    "answer_relevance_p50": null,
+    "answer_relevance_p90": null,
+    "faithfulness_scored_samples": 0,
+    "answer_relevance_scored_samples": 0,
+    "faithfulness_pass": false,
+    "answer_relevance_pass": false,
+    "overall_pass": false,
+    "ragas_scored_samples": 1
+  },
+  "ragas_summary_raw": {
+    "faithfulness": null,
+    "answer_relevancy": null
+  },
+  "low_score_examples": [
+    {
+      "query": "保妇康栓要用多久",
+      "answer": "保妇康栓**一般可连续使用16天**，但**具体要用多久要根据病情而定**，建议根据自身情况咨询专业人士或药师。  \n另外，**经期不宜使用**，遇到经期可以间断。",
+      "ground_truth": "温馨提示：一般来说，保妇康栓是可以连续使用16天的，但是具体要使用多久，这个要根据患者的自身的病情而定的，可以先咨询专业人士。保妇康栓针对一些妇科疾病，能够治愈一些妇科炎症，但是有的妇科炎症让很多女性患者感到万分苦恼，有些妇科疾病十分顽固，一盒保妇康栓用过后并不能完全治愈。那保妇康栓可以连续用吗?要用多久呢?保妇康栓是可以连续使用16天的，但是经期不宜使用，也就是遇到经期可以间断，否则建议不要间断。该药具体要用多久，建议患者根据自身的实际情况而定，可以咨询专业的药师。对于目前有生育计划的问题，建议先积极治疗疾病待痊愈后再计划，避免药物对胎儿发育造成不必要的影响。不是排卵期停用药物就没有影响的，我们建议计划前1-3月禁止接触不利因素。\n\n保妇康栓行气破瘀，生肌止痛。用于湿热瘀滞所致的带下病，症见带下量多、色黄、时有阴部瘙痒;霉菌性阴道炎、老年性阴道炎、宫颈糜烂见上述证候者。那么，保妇康栓能连续用多久？保妇康栓7～8天一疗程，重症每天用2粒。轻中度患者用药2～4疗程可痊愈，重度患者用药4～6疗程可痊愈或好转。保妇康栓在阴道内缓缓溶化，因有效成份为挥发性，可均匀分布整个阴道壁及子宫颈，并渗入到粘膜皱褶深部，充分发挥疗效。用后清凉舒适。保妇康栓可杀灭引起糜烂的病原微生物;活血化瘀，增加糜烂部位血液循环及末稍血白细胞数，增强吞噬细胞的吞噬能力;同时去腐生肌，促进组织更新修复，使糜烂面柱状上皮细胞坏死脱落，被新生的鳞状上皮细胞覆盖。不流脓水，迅速治愈，不留疤痕，不影响受孕及分娩。\n\n对于宫颈糜烂，轻度患者用药2～3疗程，即14～21天。中度患者用药3～4疗程，即21～28天。中重度患者用药4～6疗程，即28～42天，即可痊愈。最后，笔者建议有需要使用保妇康栓的患者，最好到正规的药店咨询购买。推荐阅读：保妇康栓经期能用吗 经期用会怎样保妇康栓的具体用法用量是怎样的碧凯保妇康栓可以治老年性阴道炎吗保妇康栓治疗霉菌性阴道炎效果怎样保妇康栓治疗宫颈糜烂怎么样 疗效好不好",
+      "context_docids": [
+        "dfbf9cfba18f30ae1b19cf9dc82f19dc",
+        "80ca08008f565f4d252fa35dcd30dcba",
+        "5b6a99480fac78c7148a970f91c2b518"
+      ],
+      "positive_docids": [
+        "00add3e0d3ee889ef0f900071ce06784",
+        "2af1b89df8da91e7c73094cc9491524c",
+        "5b6a99480fac78c7148a970f91c2b518",
+        "dfbf9cfba18f30ae1b19cf9dc82f19dc"
+      ],
+      "retrieval_requested_profile": "baseline",
+      "retrieval_applied_profile": "baseline",
+      "rerank_used": false,
+      "degraded_reason": "",
+      "candidate_count": 48,
+      "faithfulness": null,
+      "answer_relevance": null
+    }
+  ],
+  "samples": [
+    {
+      "query": "保妇康栓要用多久",
+      "answer": "保妇康栓**一般可连续使用16天**，但**具体要用多久要根据病情而定**，建议根据自身情况咨询专业人士或药师。  \n另外，**经期不宜使用**，遇到经期可以间断。",
+      "ground_truth": "温馨提示：一般来说，保妇康栓是可以连续使用16天的，但是具体要使用多久，这个要根据患者的自身的病情而定的，可以先咨询专业人士。保妇康栓针对一些妇科疾病，能够治愈一些妇科炎症，但是有的妇科炎症让很多女性患者感到万分苦恼，有些妇科疾病十分顽固，一盒保妇康栓用过后并不能完全治愈。那保妇康栓可以连续用吗?要用多久呢?保妇康栓是可以连续使用16天的，但是经期不宜使用，也就是遇到经期可以间断，否则建议不要间断。该药具体要用多久，建议患者根据自身的实际情况而定，可以咨询专业的药师。对于目前有生育计划的问题，建议先积极治疗疾病待痊愈后再计划，避免药物对胎儿发育造成不必要的影响。不是排卵期停用药物就没有影响的，我们建议计划前1-3月禁止接触不利因素。\n\n保妇康栓行气破瘀，生肌止痛。用于湿热瘀滞所致的带下病，症见带下量多、色黄、时有阴部瘙痒;霉菌性阴道炎、老年性阴道炎、宫颈糜烂见上述证候者。那么，保妇康栓能连续用多久？保妇康栓7～8天一疗程，重症每天用2粒。轻中度患者用药2～4疗程可痊愈，重度患者用药4～6疗程可痊愈或好转。保妇康栓在阴道内缓缓溶化，因有效成份为挥发性，可均匀分布整个阴道壁及子宫颈，并渗入到粘膜皱褶深部，充分发挥疗效。用后清凉舒适。保妇康栓可杀灭引起糜烂的病原微生物;活血化瘀，增加糜烂部位血液循环及末稍血白细胞数，增强吞噬细胞的吞噬能力;同时去腐生肌，促进组织更新修复，使糜烂面柱状上皮细胞坏死脱落，被新生的鳞状上皮细胞覆盖。不流脓水，迅速治愈，不留疤痕，不影响受孕及分娩。\n\n对于宫颈糜烂，轻度患者用药2～3疗程，即14～21天。中度患者用药3～4疗程，即21～28天。中重度患者用药4～6疗程，即28～42天，即可痊愈。最后，笔者建议有需要使用保妇康栓的患者，最好到正规的药店咨询购买。推荐阅读：保妇康栓经期能用吗 经期用会怎样保妇康栓的具体用法用量是怎样的碧凯保妇康栓可以治老年性阴道炎吗保妇康栓治疗霉菌性阴道炎效果怎样保妇康栓治疗宫颈糜烂怎么样 疗效好不好",
+      "context_docids": [
+        "dfbf9cfba18f30ae1b19cf9dc82f19dc",
+        "80ca08008f565f4d252fa35dcd30dcba",
+        "5b6a99480fac78c7148a970f91c2b518"
+      ],
+      "positive_docids": [
+        "00add3e0d3ee889ef0f900071ce06784",
+        "2af1b89df8da91e7c73094cc9491524c",
+        "5b6a99480fac78c7148a970f91c2b518",
+        "dfbf9cfba18f30ae1b19cf9dc82f19dc"
+      ],
+      "retrieval_requested_profile": "baseline",
+      "retrieval_applied_profile": "baseline",
+      "rerank_used": false,
+      "degraded_reason": "",
+      "candidate_count": 48,
+      "faithfulness": null,
+      "answer_relevance": null
+    }
+  ]
+}

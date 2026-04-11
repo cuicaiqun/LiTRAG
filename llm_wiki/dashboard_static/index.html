@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG 工作台</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb bg-orb-a" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-b" aria-hidden="true"></div>
+
+    <div class="workspace-shell">
+      <aside class="left-nav" id="leftNav" data-region="left-nav">
+        <div class="brand-block">
+          <div class="brand-mark">RW</div>
+          <div class="brand-text">
+            <h1>RAG 工作台</h1>
+            <p>清晰查看任务、结果与日志</p>
+          </div>
+        </div>
+
+        <nav class="nav-list" id="primaryNav" data-nav="primary">
+          <button class="nav-item active" data-nav-target="command-center-panel">任务总览</button>
+          <button class="nav-item" data-nav-target="knowledge-panel">资料区</button>
+          <button class="nav-item" data-nav-target="history-panel">运行记录</button>
+        </nav>
+
+        <div class="left-footer">
+          <button id="refreshBtn" class="btn btn-secondary" data-action="refresh">刷新</button>
+          <button id="openTaskDrawerBtn" class="btn btn-secondary only-mobile" data-drawer-open="taskDrawer">任务详情</button>
+          <span class="subtle" id="lastRefresh">最近刷新 --:--:--</span>
+        </div>
+      </aside>
+
+      <main class="main-stage">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Apple 风格 · 主控视图</p>
+            <h2>任务指挥台</h2>
+            <p class="subtitle">在一个界面里完成入库、编译索引、搜索资料和知识问答，并持续看到当前任务结果。</p>
+          </div>
+          <div class="top-meta">
+            <span class="meta-pill" id="modelPill">模型 --</span>
+            <span class="meta-pill" id="workspacePill">工作区 --</span>
+          </div>
+        </header>
+
+        <section id="command-center-panel" class="panel active-panel" data-panel="command-center">
+          <div class="panel-grid">
+            <article class="card summary-card" id="commandSummary" data-region="command-summary">
+              <header class="card-head">
+                <h3>任务组总览</h3>
+                <span class="subtle" id="summaryMeta">等待任务</span>
+              </header>
+              <div class="summary-metrics">
+                <div class="metric-item">
+                  <span>任务组总数</span>
+                  <strong id="summaryTotalJobs">0</strong>
+                </div>
+                <div class="metric-item">
+                  <span>进行中</span>
+                  <strong id="summaryRunningJobs">0</strong>
+                </div>
+                <div class="metric-item">
+                  <span>失败</span>
+                  <strong id="summaryFailedJobs">0</strong>
+                </div>
+                <div class="metric-item">
+                  <span>已完成</span>
+                  <strong id="summaryCompletedJobs">0</strong>
+                </div>
+              </div>
+              <div class="progress-track large" aria-live="polite">
+                <div id="globalProgressFill" class="progress-fill"></div>
+              </div>
+              <p id="globalProgressText" class="progress-text">0% · 暂无任务</p>
+            </article>
+
+            <article class="card result-card" id="currentResultCard" data-region="current-result">
+              <header class="card-head">
+                <h3>当前任务结果</h3>
+                <div class="detail-actions">
+                  <button class="chip-btn" id="openCurrentDetailBtn" data-drawer-open="detailDrawer">当前详情</button>
+                  <button class="chip-btn" id="openCurrentLogBtn" data-drawer-open="logDrawer">运行日志</button>
+                </div>
+              </header>
+              <div class="result-header">
+                <div>
+                  <h4 id="currentResultTitle">提交任务后，这里会直接显示结果</h4>
+                  <p id="currentResultSummary" class="result-summary">当前没有正在查看的任务。</p>
+                </div>
+                <span id="currentResultStatus" class="status-badge idle">待命</span>
+              </div>
+              <p id="currentResultMeta" class="result-meta">右侧任务区会保持最新任务组列表，主屏结果区始终跟随当前任务。</p>
+              <p id="currentResultPath" class="result-path">还没有生成结果路径。</p>
+              <pre id="currentResultBody" class="result-body">提交“向知识库提问”后，答案会直接回填到这里，而不是只出现在抽屉里。</pre>
+            </article>
+
+            <article class="card actions-card" data-region="main-actions">
+              <header class="card-head">
+                <h3>高频动作</h3>
+                <span class="subtle">先执行，再按需打开高级设置</span>
+              </header>
+
+              <div class="action-grid">
+                <section class="action-block" data-action-group="ingest">
+                  <div class="action-title">
+                    <h4>入库</h4>
+                    <button class="link-btn" data-drawer-open="ingestDrawer">高级设置</button>
+                  </div>
+                  <form id="ingestForm" data-form="ingest">
+                    <label for="ingestInputs">输入路径，每行一条</label>
+                    <textarea id="ingestInputs" name="inputs" rows="3" placeholder="例如：D:/data/**/*"></textarea>
+                    <div class="inline-actions">
+                      <button type="submit" class="btn btn-primary">执行入库</button>
+                    </div>
+                  </form>
+                </section>
+
+                <section class="action-block" data-action-group="compile">
+                  <div class="action-title">
+                    <h4>编译索引</h4>
+                    <button class="link-btn" data-drawer-open="compileDrawer">高级设置</button>
+                  </div>
+                  <form id="compileForm" data-form="compile">
+                    <label for="compileMaxDocs">最多处理文档数，可选</label>
+                    <input id="compileMaxDocs" type="number" min="1" name="max_docs" placeholder="留空表示全部" />
+                    <div class="inline-actions">
+                      <button type="submit" class="btn btn-primary">执行编译索引</button>
+                    </div>
+                  </form>
+                </section>
+
+                <section class="action-block" data-action-group="search">
+                  <div class="action-title">
+                    <h4>搜索资料</h4>
+                    <button class="link-btn" data-drawer-open="searchDrawer">高级设置</button>
+                  </div>
+                  <form id="searchForm" data-form="search">
+                    <label for="searchQuery">搜索问题</label>
+                    <input id="searchQuery" type="text" name="query" placeholder="例如：RAG 最佳实践" />
+                    <div class="inline-actions">
+                      <button type="submit" class="btn btn-primary">执行搜索</button>
+                    </div>
+                  </form>
+                </section>
+
+                <section class="action-block" data-action-group="ask">
+                  <div class="action-title">
+                    <h4>向知识库提问</h4>
+                    <button class="link-btn" data-drawer-open="askDrawer">高级设置</button>
+                  </div>
+                  <form id="askForm" data-form="ask">
+                    <label for="askQuestion">问题</label>
+                    <textarea id="askQuestion" name="question" rows="3" placeholder="直接输入你的问题"></textarea>
+                    <div class="inline-actions">
+                      <button type="submit" class="btn btn-primary">执行提问</button>
+                    </div>
+                  </form>
+                </section>
+              </div>
+            </article>
+
+            <article class="card recommendation-card" id="recommendationCard" data-region="recommendations">
+              <header class="card-head">
+                <h3>下一步建议</h3>
+                <button class="chip-btn" id="refreshRecommendationBtn" data-action="refresh-recommendation">刷新建议</button>
+              </header>
+              <ul id="recommendationList" class="simple-list">
+                <li class="empty-item">暂无建议</li>
+              </ul>
+            </article>
+
+            <article class="card recent-card" id="recentResultsCard" data-region="recent-results">
+              <header class="card-head">
+                <h3>最近结果</h3>
+                <button class="chip-btn" id="openDetailDrawerBtn" data-drawer-open="detailDrawer">打开详情</button>
+              </header>
+              <ul id="recentResultList" class="simple-list">
+                <li class="empty-item">暂无结果</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="knowledge-panel" class="panel" data-panel="knowledge">
+          <article class="card">
+            <header class="card-head">
+              <h3>资料区</h3>
+              <span class="subtle">结果文件会出现在“最近结果”和当前详情中</span>
+            </header>
+            <div class="placeholder">
+              <p>工作流建议：先入库，再编译索引，最后搜索或提问。最新结果会自动同步到主屏结果区。</p>
+            </div>
+          </article>
+        </section>
+
+        <section id="history-panel" class="panel" data-panel="history">
+          <article class="card">
+            <header class="card-head">
+              <h3>运行记录</h3>
+              <button class="chip-btn" id="openLogDrawerBtn" data-drawer-open="logDrawer">打开日志抽屉</button>
+            </header>
+            <div class="placeholder">
+              <p>提交任务后会自动展开任务或日志视图，避免“已经在跑，但主界面没有反馈”。</p>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <aside class="task-side" id="taskSidebar" data-region="task-sidebar">
+        <header class="task-head">
+          <h3>任务组</h3>
+          <button class="chip-btn" id="openLogDrawerFromTaskBtn" data-drawer-open="logDrawer">日志</button>
+        </header>
+        <div id="jobGroupList" class="task-list" data-list="job-groups">
+          <div class="task-empty">当前还没有任务组</div>
+        </div>
+      </aside>
+    </div>
+
+    <aside class="drawer right-drawer" id="taskDrawer" data-drawer="task" aria-hidden="true">
+      <header class="drawer-head">
+        <h3>任务组详情</h3>
+        <button class="chip-btn" data-drawer-close="taskDrawer">关闭</button>
+      </header>
+      <div id="taskDrawerContent" class="drawer-body"></div>
+    </aside>
+
+    <aside class="drawer right-drawer" id="logDrawer" data-drawer="log" aria-hidden="true">
+      <header class="drawer-head">
+        <h3>运行日志</h3>
+        <button class="chip-btn" id="clearLogBtn">清空</button>
+      </header>
+      <div class="drawer-body">
+        <div id="logStream" class="log-stream"></div>
+      </div>
+      <footer class="drawer-foot">
+        <button class="btn btn-secondary" data-drawer-close="logDrawer">关闭</button>
+      </footer>
+    </aside>
+
+    <aside class="drawer right-drawer" id="detailDrawer" data-drawer="detail" aria-hidden="true">
+      <header class="drawer-head">
+        <h3>当前详情</h3>
+        <button class="chip-btn" data-drawer-close="detailDrawer">关闭</button>
+      </header>
+      <div class="drawer-body">
+        <p class="subtle" id="previewPath">尚未选择内容</p>
+        <pre id="filePreview">暂无结构化结果</pre>
+        <pre id="askAnswer">暂无回答</pre>
+      </div>
+    </aside>
+
+    <aside class="drawer right-drawer" id="ingestDrawer" data-drawer="ingest" aria-hidden="true">
+      <header class="drawer-head">
+        <h3>入库高级设置</h3>
+        <button class="chip-btn" data-drawer-close="ingestDrawer">关闭</button>
+      </header>
+      <div class="drawer-body">
+        <label class="field" for="ingestMaxFiles">最多文件数</label>
+        <input id="ingestMaxFiles" type="number" min="1" name="max_files" form="ingestForm" placeholder="可选" />
+        <label class="field check">
+          <input type="checkbox" name="force" form="ingestForm" />
+          强制重新入库
+        </label>
+        <label class="field check">
+          <input type="checkbox" name="compile" form="ingestForm" checked />
+          入库后自动编译索引
+        </label>
+        <label class="field check">
+          <input type="checkbox" name="strict" form="ingestForm" checked />
+          严格失败模式
+        </label>
+      </div>
+    </aside>
+
+    <aside class="drawer right-drawer" id="compileDrawer" data-drawer="compile" aria-hidden="true">
+      <header class="drawer-head">
+        <h3>编译索引高级设置</h3>
+        <button class="chip-btn" data-drawer-close="compileDrawer">关闭</button>
+      </header>
+      <div class="drawer-body">
+        <label class="field check">
+          <input type="checkbox" name="force" form="compileForm" />
+          强制重新编译
+        </label>
+      </div>
+    </aside>
+
+    <aside class="drawer right-drawer" id="searchDrawer" data-drawer="search" aria-hidden="true">
+      <header class="drawer-head">
+        <h3>搜索资料高级设置</h3>
+        <button class="chip-btn" data-drawer-close="searchDrawer">关闭</button>
+      </header>
+      <div class="drawer-body">
+        <label class="field" for="searchMaxResults">最多结果数</label>
+        <input id="searchMaxResults" type="number" min="1" max="10" name="max_results" form="searchForm" value="5" />
+        <label class="field check">
+          <input type="checkbox" name="compile" form="searchForm" checked />
+          搜索后自动编译索引
+        </label>
+      </div>
+    </aside>
+
+    <aside class="drawer right-drawer" id="askDrawer" data-drawer="ask" aria-hidden="true">
+      <header class="drawer-head">
+        <h3>提问高级设置</h3>
+        <button class="chip-btn" data-drawer-close="askDrawer">关闭</button>
+      </header>
+      <div class="drawer-body">
+        <label class="field" for="askTopK">Top K</label>
+        <input id="askTopK" type="number" min="1" max="20" name="top_k" form="askForm" value="6" />
+        <label class="field" for="askRetrievalProfile">检索策略</label>
+        <select id="askRetrievalProfile" name="retrieval_profile" form="askForm">
+          <option value="">默认（环境变量）</option>
+          <option value="baseline">baseline</option>
+          <option value="hybrid_no_rerank">hybrid_no_rerank</option>
+          <option value="hybrid_rerank">hybrid_rerank</option>
+        </select>
+        <label class="field check">
+          <input type="checkbox" name="promote" form="askForm" />
+          回灌到知识库问答区
+        </label>
+      </div>
+    </aside>
+
+    <div class="compat-hidden" aria-hidden="true">
+      <ul id="outputList"></ul>
+      <ul id="sourceList"></ul>
+      <span id="rawTotalMetric"></span>
+      <span id="ingestedMetric"></span>
+      <span id="sourcesMetric"></span>
+      <span id="outputsMetric"></span>
+      <span id="qaMetric"></span>
+      <span id="webMetric"></span>
+      <span id="indexTime"></span>
+      <span id="mapTime"></span>
+      <span id="visionModelValue"></span>
+      <span id="asrModelValue"></span>
+      <div id="adminProgressFill"></div>
+      <div id="adminProgressText"></div>
+      <div id="compileProgressFill"></div>
+      <div id="compileProgressText"></div>
+      <div id="ingestProgressFill"></div>
+      <div id="ingestProgressText"></div>
+      <div id="searchProgressFill"></div>
+      <div id="searchProgressText"></div>
+      <div id="askProgressFill"></div>
+      <div id="askProgressText"></div>
+      <button data-action="init"></button>
+      <button data-action="build-index"></button>
+      <input id="ingestFilesInput" type="file" name="upload_files" multiple form="ingestForm" />
+      <input id="ingestDirInput" type="file" name="upload_dirs" webkitdirectory directory multiple form="ingestForm" />
+      <div id="ingestUploadSummary"></div>
+    </div>
+
+    <script src="/assets/app.js" defer></script>
+  </body>
+</html>

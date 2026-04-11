@@ -1,0 +1,1276 @@
+{
+  "dataset": "DuReader-Retrieval",
+  "split": "dev",
+  "dataset_path": "C:/Users/24719/Desktop/rag-skill/datasets/dev.jsonl/dev.jsonl",
+  "evaluated_at": "2026-04-09 23:39:09",
+  "retrieval_profile": "baseline",
+  "ablation": true,
+  "profiles": {
+    "baseline": {
+      "total_samples": 200,
+      "evaluated_samples": 180,
+      "skipped_samples": 20,
+      "mean_candidates": 47.98888888888889,
+      "mrr@10": 0.3993077601410937,
+      "recall@1": 0.2777777777777778,
+      "recall@5": 0.5722222222222222,
+      "recall@10": 0.75,
+      "recall@20": 0.9,
+      "recall@50": 1.0,
+      "rerank_used_ratio": 0.0,
+      "degraded_ratio": 0.0,
+      "applied_profile_counts": {
+        "baseline": 180
+      },
+      "failure_examples": [
+        {
+          "query": "国家法定节假日共多少天",
+          "positive_docids": [
+            "1132b79d0bc37fc0d6f975904a8c0343",
+            "2c4fe63d3378ac39907b6b2648eb40c5",
+            "5bc347ff17d488f1704e2893c9e8ecfa",
+            "6e67389d07da8ce02ed97167d23baf9d"
+          ],
+          "top10_docids": [
+            "ea412c7366ba5d52b0e26487ac1d79f1",
+            "f794a6dc6c26ba7a64d14ddfea5954ff",
+            "24fe7952c6ca57cb585dd21262289890",
+            "0b35c2ffdf8ca8b82b7e98a52de3c6d9",
+            "93d7a7af323ed0584ea7af798400e422",
+            "a0ac26837aef3497f4fe08b6243b8eed",
+            "7775fbe10f220aef8e5e6247b6d0f9f9",
+            "58c00697311c9ad6eb384b6fca7bd12d",
+            "af404c0e301d9bab9e021197882e5ae8",
+            "4db2d64ea8cb87db9bc7aec3030a2b94"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "哪个网站有湖南卫视直播",
+          "positive_docids": [
+            "09047f2d4d9485eb1da4ae8486fd7e6d",
+            "64f962153f5572a3f3734d4e3ee64159"
+          ],
+          "top10_docids": [
+            "bc10cfb6bcae9df321839c0846242574",
+            "31a96bd83ada9510b0ecb6ffe4088925",
+            "7a4238810b79fe52f9645b335938dc09",
+            "a297032590bd5defa66acc602ef951b5",
+            "93847a2f5ea63e5ec2cabfff449dbbd2",
+            "54c7619e35ea2581060d9ddb88326630",
+            "ddc67410adca9a06a605fc9338d081ee",
+            "ef8b2f56a140666b2b09a6294f97ab13",
+            "ccd4948fc03a43f256e7e6296727cfa2",
+            "0ed2c01ed37eee0ea3eea64d4966c242"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "覆铜面板是什么",
+          "positive_docids": [
+            "0045f9336bac80891ea597253ea218cf",
+            "80226037b2d33bf1d961e2dfe5319d97",
+            "ab9eb95e10cc4dec4953d68a996ac825"
+          ],
+          "top10_docids": [
+            "0c16dc4c82e2a2206babc2864cf9b45a",
+            "ae7679e056d3b9262b0efc3678ec3788",
+            "69c3ec844cd417e51e4a1f1abd7af72b",
+            "0a652dd01b0146b6b6fdbd4045563670",
+            "f4eeef97b195a38a45434cc5e6e4fcb1",
+            "0dca6af7ea233f2931c562f1cd2e7842",
+            "3babb065d41d1b2fe906680d6a81b2b5",
+            "7ed00bbf467536801a3fe30a4776dafb",
+            "9ca869caa3f489e14b6b4e887795eeea",
+            "952beb302ca0cb8ada661621875116ea"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "怎么屏蔽qq新闻弹窗",
+          "positive_docids": [
+            "5ec4a2a6689550e67ad1bbe54f473edb",
+            "de75182f37a37e29f98dfbf69ba59086"
+          ],
+          "top10_docids": [
+            "31cd7c34a425f4e3a0601eaf4c27d069",
+            "dfa74998336b5bef01921041e4a90601",
+            "46a26ea2ee278348d01d190501685c36",
+            "5facdbd71bd3329c8d6c625e981a9009",
+            "8e0bb395f32833b8b624f24d710aab76",
+            "46e4badb5bd7d6465e09818ce3a0882a",
+            "0bdde12f43ee94a663f1370f4c4c2875",
+            "9ac6726a916688ba882549e3e524c350",
+            "efd5a27985a926d3bffd5ba102faad61",
+            "46d0337d09e728063b80e23dd23d95d9"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "艾滋病潜伏期能治吗",
+          "positive_docids": [
+            "a4d72abaef4e15029c0249bdcbc4734c"
+          ],
+          "top10_docids": [
+            "639028d4b8401ae6ec373a0dc0d4277b",
+            "3d4802ec3883e1e60ec2acada46d2ffb",
+            "504bae4daef9d9c5f4ced52aec4437e3",
+            "a4b77353be22397abcb48ba459ea0032",
+            "acccf198cb8d6f53a0d851901995b08f",
+            "e88f701a6584f28e3d712aa4f25c1766",
+            "f2ea57e4b0995aa98a0eb859ccd423df",
+            "2802c5f5b55b4548bf7edffc21693a81",
+            "77e638bf800155e474868ae56faef72b",
+            "7d39a011e46fe552122506c081407e45"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "子宫瘢痕向内凹陷形成一腔隙可以怀孕吗?",
+          "positive_docids": [
+            "854073b166651c4bcd81e77327796635",
+            "a163e676d4aacb81b61cafb02bfce966"
+          ],
+          "top10_docids": [
+            "150e72fa9ce3df0b82a9ef237732bb4b",
+            "bfb517b5e7b4f8850bccdfec07272c4a",
+            "ffb2da65084bb4963e2053462a815f99",
+            "2b7a7672289eebaaffccd74953934583",
+            "8b0b62c961b62172428f2affa0e659a7",
+            "a38cbf339429c95ddad2c19297954082",
+            "8bb80b324611379eac3e83ffb5000870",
+            "02c1c9abb231150db7025414abb044f6",
+            "f617aba38341906702b7d65a8956eecc",
+            "db139ff9db4c302b5a9f30b705edcdec"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "cad设计签名怎么弄上去的",
+          "positive_docids": [
+            "9999121d19a8ce057a9bf3dbaa4ffc93",
+            "a89682755d47e897847302dcb4812136",
+            "aaec1acd55cfe816d85ae0abe07df120"
+          ],
+          "top10_docids": [
+            "513ac5b0f853d12ca8799c39822cc5ac",
+            "7a610196a8972dcfcd32c9ee7addbdcf",
+            "c69581292aa3e0c56964fa9002f1b1fd",
+            "202d7b0b546af8bef5761512c7104009",
+            "49849a4fffa46b4bdc15d9d3d14dd9b6",
+            "7ddc6effd930bad84ea2f887434ad768",
+            "dc48d4c2517272d58b180576e71ed22b",
+            "599904240976a4ffdf447392862bc57e",
+            "e85a835d151b204d215e534891c09942",
+            "3633b024d9b1a6fc730290777e3b804a"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "eve回电是什么",
+          "positive_docids": [
+            "6dddded28d2d08edae67d48749bdc125"
+          ],
+          "top10_docids": [
+            "18d5851ab62a93238ac1a79c08915ba8",
+            "cb659150438bd71e84bd6d30432fd010",
+            "592415204ab575c28f07df8cdc54706e",
+            "a90d55a0d17ed2d74afde5f6cef9dfe8",
+            "6799ded9ba26636fdedf6b2c2ac2d368",
+            "25395446ad29977021e4d06930ec6eb7",
+            "ab4ea8d8467f21abe3300c5457c0ef27",
+            "2f114ef8b2d6b64dcd8356daa857e5c2",
+            "d0aedba01b8791ba3c6b873c11a39454",
+            "d9deecebb8312deffec5ff1d523071d6"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "windows media player不见了",
+          "positive_docids": [
+            "e1e3ea8e7282ac51615c57117076d2cd"
+          ],
+          "top10_docids": [
+            "a8b5a8ed7d78eafede6b19a2d9ee4974",
+            "73bdb6af51fc165213201e0d372d2bce",
+            "9c213501bfef69a10087debb09620133",
+            "f9930801a23515132fa8c449928f22a4",
+            "6ae403ccecb1d433ef16eaeb6fe984cc",
+            "509c57b76087fd3b88dcacc54c76c247",
+            "04612541eea014c94462f3d70697082e",
+            "fcffcae26a6b31991dcecbaf05f032de",
+            "7a6450ec47ba755cd4510bd1924b25d2",
+            "856ca8689b17d60be745c7b5efa86c2c"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "消灾吉祥神咒意思",
+          "positive_docids": [
+            "558fd4b68e78564b6cbfe93744a909c2"
+          ],
+          "top10_docids": [
+            "638965dda725aab509d0efaff5d0c558",
+            "85e45c56c2dcc0f2d45199c974c89c43",
+            "662bd8f2746fccfb13c8b301c797023c",
+            "6f7398ca482aff3df51b26f2a5f42f0f",
+            "714d1d0a3ddce2810304fd20b3f0d436",
+            "1bf0ce09c497246edfa90a5f9b6bc596",
+            "68dd47c0e677832ceea00b3cfff18bed",
+            "a13c8ca1d47b58a3fc4cc427140bef9c",
+            "d4094390810ecf8b7101702e19e63afe",
+            "bb9948abbd0c4f916084b2c493f967c7"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "excel表格右边没有边框",
+          "positive_docids": [
+            "6a61e8feb095f328575e1beb636ed4ad",
+            "b1c8cb19787c8ee53dfd437aa49ce1b4",
+            "b5e5be40ee70281813c583a7c55004f6"
+          ],
+          "top10_docids": [
+            "063589b6e55f6b7300d4ee74dc9f4c8d",
+            "59743e784b2630520fd81bafab8f315c",
+            "c7165daf928f8e3207b8329ad5896be6",
+            "64cc061a46c4f886e6381eb77886fc71",
+            "e6c26744caf7cb1aa5326d93854b792a",
+            "dffb86ed7da9dc2731a1e0ee20b04047",
+            "4ce29737a25a4579ebc5871249472e3b",
+            "7cf20bcda3a991c7799c4246159a7ba5",
+            "ea18410fdf87eb38cd958600bc89d200",
+            "1117c509f832350cd0d948ecd9b48a1a"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "辅酶q10的服用方法",
+          "positive_docids": [
+            "087fa453f6fe429d828bc2ec27d106d3",
+            "b8f24cc4dbc0ad22aa5a5e410f4444e8",
+            "df222de7616838757bcb75b255ec0011",
+            "fa69ab051d6d547bca654942ed9e3602"
+          ],
+          "top10_docids": [
+            "3b08de32eb7449a43e31b0e7ca0d8ec0",
+            "54df914f307f41d67c76fd805e055ac5",
+            "42a0da386945f61b5f6b2a4c654f11a7",
+            "438506349ab8c946c62c420b42ca085d",
+            "86eda662fc0f2850f3a12597ddbd2833",
+            "072b244d646c0fee61f8f5d531f6f1b0",
+            "2282c3c44641515e3cd8e7347571bc2d",
+            "8cb7e3815278d8b1225195d2163b9f2a",
+            "d561418d64247ea3bb84a66ca02ef84e",
+            "c341389b930f378bad04519b0b9c6dc0"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "加格达奇宾馆有哪些",
+          "positive_docids": [
+            "351f2fb65dfb879b48f46867cc8e1666"
+          ],
+          "top10_docids": [
+            "cf0350e1cda4ae8535fe017ac5939669",
+            "704a02769d5b459f8f2a715f5715e2af",
+            "7e422f203f4fabd112bcbb8047e31ff1",
+            "642b484c247471d7b01ae3cb50cffdd2",
+            "b60b440fd09cd15c30693740cced1610",
+            "32c2693ee5a54cbac0dca0f546142d43",
+            "bf5b1c94e3e3c282c76be0b7c10ae2ab",
+            "f45d06ddf4a234aa8109a773429ed010",
+            "8cc67de545762f447b8b2527bb38d173",
+            "fa03b6eaf3c11645a77bedfb4f5f9d0c"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "温泉蛋怎么做",
+          "positive_docids": [
+            "4e03cafe88598761ff92b27028082610",
+            "a6f89752f30d22c8f01750fdf379a58a",
+            "ab3c8640f8022ed0a4055671d4f542e8",
+            "ec4f253187209c1c12b2cc0c5a2f0c5d",
+            "f9208e3030279414373a087592935c04"
+          ],
+          "top10_docids": [
+            "4801b2dbf9c534b05b35983dc114d86e",
+            "9f3e17e9d8469072e54edd53acd47b3e",
+            "34b474b1489b784789305e14a13c36a4",
+            "bf84e5d8414271532e8e947387a0f132",
+            "bc4c7743a83ed573c019cf3772c66215",
+            "ab7528b2e5d9679b37ae31f02791800d",
+            "dd39113eca0eaba473adc4007344f4b2",
+            "63883201af00fe7f43e90a3b1b52b6a2",
+            "d690786a17c2213ee9c06d286f77cee2",
+            "3829ddface97609d0ba75bc980cff0e6"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "均瑶集团是上市公司吗",
+          "positive_docids": [
+            "164dc7a955bd7cd1f952e3dec0d29afa",
+            "534e284ad58fa8d3b3bc3a773e9740d6",
+            "8494766de10401004bbc59d4ceba94cc"
+          ],
+          "top10_docids": [
+            "7d1fc4197bf351e24f547006b73fc582",
+            "67938fd6e440ab3d38e022c7ba4a5fde",
+            "5960495c7ace46c59864861fc4871310",
+            "8b3fe3f6b7d9af09bbb75e4a18aa403d",
+            "835e30085dc5a9d5f8881fe4ce0ed662",
+            "4944de0a249a1ce56a89ea1dee5f0b00",
+            "03598ae7739d2dea225668996af024e3",
+            "bf0d66fa1bd0d997d4ce8b055fdd2140",
+            "8f003888df98763b472dfe469d756a26",
+            "90b577bd21ae4ad3d74a2971ced658f8"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "微信不提示升级",
+          "positive_docids": [
+            "1a944d064f362b811adba6a9a9fc8991",
+            "31e8652dd42d184b042fde05055d0b10"
+          ],
+          "top10_docids": [
+            "d30fd48800fee90c34266781c2c4695e",
+            "9958ef035dcc07a8063deae87e61566f",
+            "741e10541d5a35a6139977fef749e065",
+            "a41b1518db0a0980f03d71bb391b04c8",
+            "001d9ad7d48596365532aa8fca0a44d9",
+            "910d7ea5815466c2c363b6fa93e60b76",
+            "156fb5ae957301e5b6a55359a0606776",
+            "c00e05b4c332d652aff4bd0f20c0bbe0",
+            "16cbe289ac90e0fe8ece37eab2a7c10c",
+            "39730176ac239027919d090701d64251"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "泰拉瑞亚叶绿套和乌龟套哪个好",
+          "positive_docids": [
+            "a8c9196ef0ebb87db8bc7652a1358599"
+          ],
+          "top10_docids": [
+            "5ef1a698483e761b223b1f0e4317f319",
+            "b727ffb28e0595d03e03142f673b914d",
+            "f37a9d332a106134d679f97eed8940d5",
+            "6583bac992d6cafc1ab80969f97773f1",
+            "f91cf88edd601305b0593111eab1074d",
+            "a05379b0fb1b0a4bab3965491282dac1",
+            "53638afaaef5506b26463f4c41c2fb2f",
+            "b62b8e7d30fb5f4a7e37d04b7f941e7e",
+            "107b5be17e613c9d891a800b506f34da",
+            "98889bc8250444e9dbd286548688c7c0"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "淘宝助理图片搬家慢",
+          "positive_docids": [
+            "3d6663f644a84e3751f68fa7503a4ca8",
+            "6ee7ac0e8e07742ca0e0e428a44ef535"
+          ],
+          "top10_docids": [
+            "336ec246f23e2be156210fe105ac70d3",
+            "11841980de5ad7a3a19f52192ff80dd4",
+            "b4f65b043ec2e985896d6ef7f3c7abe7",
+            "3eccda03801339b5316ff9800aeb5117",
+            "e2db3c3c3e5f04df29f6e048bf86a513",
+            "906e4aabf506375d068dd8d6f5d03785",
+            "572b76e42f28e25f3b6c7699dd720a80",
+            "e330e5cdce687c15be45848b0f9eb8ba",
+            "96483cf188478b95ad3f08bc74c0b517",
+            "d321f8748ecda3fe85e199b1d34cd53e"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "怎样识别电位器型号",
+          "positive_docids": [
+            "6511bdd8a88f83b06dae2d7ee2dbef7e"
+          ],
+          "top10_docids": [
+            "ada557ba22ae1c7a6fd01d18c731d1e0",
+            "7ad7532aee8c5847530703d87843b130",
+            "871b89adb59561b4bdee97d71e4f1ca0",
+            "82d067d285ae6c83e68e82a9578466a3",
+            "79897ae8709025728e9f4615e46b71e7",
+            "c4ebb4a92e0dbb3de325b32ff9ef07e5",
+            "4f201fa9b45e19124df3b7d799159af0",
+            "f36e9349897c89bd68e905c2de56cc63",
+            "130c371f82de84581ff409718334a19e",
+            "c3e6c9d39b6589acdc71bc95df50d1fe"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "苹果手机抖屏怎么办",
+          "positive_docids": [
+            "7e918f70a13955da20fa127c3741592c"
+          ],
+          "top10_docids": [
+            "cd04ec78f9bcbc963a0cbfa72180cda7",
+            "6e4e408374c2d01c1a4368a81b6d99f9",
+            "ef7fd345fa618435765fc0c53d3835b0",
+            "e6e73667e6e9898abdcedb4eb9ba1e5c",
+            "cc65ba63af4f7a11816f9892ccd7ea30",
+            "7c855eb377ae95b83f232702ed20c7e6",
+            "846d88f86c53ea48a6a95c3877334258",
+            "4d0ccee99adee50bd48272a90393916b",
+            "7b49c7fb5593d4beb7c67b8060a5a238",
+            "ed2699ea8eb7aa702524a7285b3da117"
+          ],
+          "applied_profile": "baseline"
+        }
+      ]
+    },
+    "hybrid_no_rerank": {
+      "total_samples": 200,
+      "evaluated_samples": 180,
+      "skipped_samples": 20,
+      "mean_candidates": 47.98888888888889,
+      "mrr@10": 0.3993077601410937,
+      "recall@1": 0.2777777777777778,
+      "recall@5": 0.5722222222222222,
+      "recall@10": 0.75,
+      "recall@20": 0.9,
+      "recall@50": 1.0,
+      "rerank_used_ratio": 0.0,
+      "degraded_ratio": 1.0,
+      "applied_profile_counts": {
+        "baseline": 180
+      },
+      "failure_examples": [
+        {
+          "query": "国家法定节假日共多少天",
+          "positive_docids": [
+            "1132b79d0bc37fc0d6f975904a8c0343",
+            "2c4fe63d3378ac39907b6b2648eb40c5",
+            "5bc347ff17d488f1704e2893c9e8ecfa",
+            "6e67389d07da8ce02ed97167d23baf9d"
+          ],
+          "top10_docids": [
+            "ea412c7366ba5d52b0e26487ac1d79f1",
+            "f794a6dc6c26ba7a64d14ddfea5954ff",
+            "24fe7952c6ca57cb585dd21262289890",
+            "0b35c2ffdf8ca8b82b7e98a52de3c6d9",
+            "93d7a7af323ed0584ea7af798400e422",
+            "a0ac26837aef3497f4fe08b6243b8eed",
+            "7775fbe10f220aef8e5e6247b6d0f9f9",
+            "58c00697311c9ad6eb384b6fca7bd12d",
+            "af404c0e301d9bab9e021197882e5ae8",
+            "4db2d64ea8cb87db9bc7aec3030a2b94"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "哪个网站有湖南卫视直播",
+          "positive_docids": [
+            "09047f2d4d9485eb1da4ae8486fd7e6d",
+            "64f962153f5572a3f3734d4e3ee64159"
+          ],
+          "top10_docids": [
+            "bc10cfb6bcae9df321839c0846242574",
+            "31a96bd83ada9510b0ecb6ffe4088925",
+            "7a4238810b79fe52f9645b335938dc09",
+            "a297032590bd5defa66acc602ef951b5",
+            "93847a2f5ea63e5ec2cabfff449dbbd2",
+            "54c7619e35ea2581060d9ddb88326630",
+            "ddc67410adca9a06a605fc9338d081ee",
+            "ef8b2f56a140666b2b09a6294f97ab13",
+            "ccd4948fc03a43f256e7e6296727cfa2",
+            "0ed2c01ed37eee0ea3eea64d4966c242"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "覆铜面板是什么",
+          "positive_docids": [
+            "0045f9336bac80891ea597253ea218cf",
+            "80226037b2d33bf1d961e2dfe5319d97",
+            "ab9eb95e10cc4dec4953d68a996ac825"
+          ],
+          "top10_docids": [
+            "0c16dc4c82e2a2206babc2864cf9b45a",
+            "ae7679e056d3b9262b0efc3678ec3788",
+            "69c3ec844cd417e51e4a1f1abd7af72b",
+            "0a652dd01b0146b6b6fdbd4045563670",
+            "f4eeef97b195a38a45434cc5e6e4fcb1",
+            "0dca6af7ea233f2931c562f1cd2e7842",
+            "3babb065d41d1b2fe906680d6a81b2b5",
+            "7ed00bbf467536801a3fe30a4776dafb",
+            "9ca869caa3f489e14b6b4e887795eeea",
+            "952beb302ca0cb8ada661621875116ea"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "怎么屏蔽qq新闻弹窗",
+          "positive_docids": [
+            "5ec4a2a6689550e67ad1bbe54f473edb",
+            "de75182f37a37e29f98dfbf69ba59086"
+          ],
+          "top10_docids": [
+            "31cd7c34a425f4e3a0601eaf4c27d069",
+            "dfa74998336b5bef01921041e4a90601",
+            "46a26ea2ee278348d01d190501685c36",
+            "5facdbd71bd3329c8d6c625e981a9009",
+            "8e0bb395f32833b8b624f24d710aab76",
+            "46e4badb5bd7d6465e09818ce3a0882a",
+            "0bdde12f43ee94a663f1370f4c4c2875",
+            "9ac6726a916688ba882549e3e524c350",
+            "efd5a27985a926d3bffd5ba102faad61",
+            "46d0337d09e728063b80e23dd23d95d9"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "艾滋病潜伏期能治吗",
+          "positive_docids": [
+            "a4d72abaef4e15029c0249bdcbc4734c"
+          ],
+          "top10_docids": [
+            "639028d4b8401ae6ec373a0dc0d4277b",
+            "3d4802ec3883e1e60ec2acada46d2ffb",
+            "504bae4daef9d9c5f4ced52aec4437e3",
+            "a4b77353be22397abcb48ba459ea0032",
+            "acccf198cb8d6f53a0d851901995b08f",
+            "e88f701a6584f28e3d712aa4f25c1766",
+            "f2ea57e4b0995aa98a0eb859ccd423df",
+            "2802c5f5b55b4548bf7edffc21693a81",
+            "77e638bf800155e474868ae56faef72b",
+            "7d39a011e46fe552122506c081407e45"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "子宫瘢痕向内凹陷形成一腔隙可以怀孕吗?",
+          "positive_docids": [
+            "854073b166651c4bcd81e77327796635",
+            "a163e676d4aacb81b61cafb02bfce966"
+          ],
+          "top10_docids": [
+            "150e72fa9ce3df0b82a9ef237732bb4b",
+            "bfb517b5e7b4f8850bccdfec07272c4a",
+            "ffb2da65084bb4963e2053462a815f99",
+            "2b7a7672289eebaaffccd74953934583",
+            "8b0b62c961b62172428f2affa0e659a7",
+            "a38cbf339429c95ddad2c19297954082",
+            "8bb80b324611379eac3e83ffb5000870",
+            "02c1c9abb231150db7025414abb044f6",
+            "f617aba38341906702b7d65a8956eecc",
+            "db139ff9db4c302b5a9f30b705edcdec"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "cad设计签名怎么弄上去的",
+          "positive_docids": [
+            "9999121d19a8ce057a9bf3dbaa4ffc93",
+            "a89682755d47e897847302dcb4812136",
+            "aaec1acd55cfe816d85ae0abe07df120"
+          ],
+          "top10_docids": [
+            "513ac5b0f853d12ca8799c39822cc5ac",
+            "7a610196a8972dcfcd32c9ee7addbdcf",
+            "c69581292aa3e0c56964fa9002f1b1fd",
+            "202d7b0b546af8bef5761512c7104009",
+            "49849a4fffa46b4bdc15d9d3d14dd9b6",
+            "7ddc6effd930bad84ea2f887434ad768",
+            "dc48d4c2517272d58b180576e71ed22b",
+            "599904240976a4ffdf447392862bc57e",
+            "e85a835d151b204d215e534891c09942",
+            "3633b024d9b1a6fc730290777e3b804a"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "eve回电是什么",
+          "positive_docids": [
+            "6dddded28d2d08edae67d48749bdc125"
+          ],
+          "top10_docids": [
+            "18d5851ab62a93238ac1a79c08915ba8",
+            "cb659150438bd71e84bd6d30432fd010",
+            "592415204ab575c28f07df8cdc54706e",
+            "a90d55a0d17ed2d74afde5f6cef9dfe8",
+            "6799ded9ba26636fdedf6b2c2ac2d368",
+            "25395446ad29977021e4d06930ec6eb7",
+            "ab4ea8d8467f21abe3300c5457c0ef27",
+            "2f114ef8b2d6b64dcd8356daa857e5c2",
+            "d0aedba01b8791ba3c6b873c11a39454",
+            "d9deecebb8312deffec5ff1d523071d6"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "windows media player不见了",
+          "positive_docids": [
+            "e1e3ea8e7282ac51615c57117076d2cd"
+          ],
+          "top10_docids": [
+            "a8b5a8ed7d78eafede6b19a2d9ee4974",
+            "73bdb6af51fc165213201e0d372d2bce",
+            "9c213501bfef69a10087debb09620133",
+            "f9930801a23515132fa8c449928f22a4",
+            "6ae403ccecb1d433ef16eaeb6fe984cc",
+            "509c57b76087fd3b88dcacc54c76c247",
+            "04612541eea014c94462f3d70697082e",
+            "fcffcae26a6b31991dcecbaf05f032de",
+            "7a6450ec47ba755cd4510bd1924b25d2",
+            "856ca8689b17d60be745c7b5efa86c2c"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "消灾吉祥神咒意思",
+          "positive_docids": [
+            "558fd4b68e78564b6cbfe93744a909c2"
+          ],
+          "top10_docids": [
+            "638965dda725aab509d0efaff5d0c558",
+            "85e45c56c2dcc0f2d45199c974c89c43",
+            "662bd8f2746fccfb13c8b301c797023c",
+            "6f7398ca482aff3df51b26f2a5f42f0f",
+            "714d1d0a3ddce2810304fd20b3f0d436",
+            "1bf0ce09c497246edfa90a5f9b6bc596",
+            "68dd47c0e677832ceea00b3cfff18bed",
+            "a13c8ca1d47b58a3fc4cc427140bef9c",
+            "d4094390810ecf8b7101702e19e63afe",
+            "bb9948abbd0c4f916084b2c493f967c7"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "excel表格右边没有边框",
+          "positive_docids": [
+            "6a61e8feb095f328575e1beb636ed4ad",
+            "b1c8cb19787c8ee53dfd437aa49ce1b4",
+            "b5e5be40ee70281813c583a7c55004f6"
+          ],
+          "top10_docids": [
+            "063589b6e55f6b7300d4ee74dc9f4c8d",
+            "59743e784b2630520fd81bafab8f315c",
+            "c7165daf928f8e3207b8329ad5896be6",
+            "64cc061a46c4f886e6381eb77886fc71",
+            "e6c26744caf7cb1aa5326d93854b792a",
+            "dffb86ed7da9dc2731a1e0ee20b04047",
+            "4ce29737a25a4579ebc5871249472e3b",
+            "7cf20bcda3a991c7799c4246159a7ba5",
+            "ea18410fdf87eb38cd958600bc89d200",
+            "1117c509f832350cd0d948ecd9b48a1a"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "辅酶q10的服用方法",
+          "positive_docids": [
+            "087fa453f6fe429d828bc2ec27d106d3",
+            "b8f24cc4dbc0ad22aa5a5e410f4444e8",
+            "df222de7616838757bcb75b255ec0011",
+            "fa69ab051d6d547bca654942ed9e3602"
+          ],
+          "top10_docids": [
+            "3b08de32eb7449a43e31b0e7ca0d8ec0",
+            "54df914f307f41d67c76fd805e055ac5",
+            "42a0da386945f61b5f6b2a4c654f11a7",
+            "438506349ab8c946c62c420b42ca085d",
+            "86eda662fc0f2850f3a12597ddbd2833",
+            "072b244d646c0fee61f8f5d531f6f1b0",
+            "2282c3c44641515e3cd8e7347571bc2d",
+            "8cb7e3815278d8b1225195d2163b9f2a",
+            "d561418d64247ea3bb84a66ca02ef84e",
+            "c341389b930f378bad04519b0b9c6dc0"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "加格达奇宾馆有哪些",
+          "positive_docids": [
+            "351f2fb65dfb879b48f46867cc8e1666"
+          ],
+          "top10_docids": [
+            "cf0350e1cda4ae8535fe017ac5939669",
+            "704a02769d5b459f8f2a715f5715e2af",
+            "7e422f203f4fabd112bcbb8047e31ff1",
+            "642b484c247471d7b01ae3cb50cffdd2",
+            "b60b440fd09cd15c30693740cced1610",
+            "32c2693ee5a54cbac0dca0f546142d43",
+            "bf5b1c94e3e3c282c76be0b7c10ae2ab",
+            "f45d06ddf4a234aa8109a773429ed010",
+            "8cc67de545762f447b8b2527bb38d173",
+            "fa03b6eaf3c11645a77bedfb4f5f9d0c"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "温泉蛋怎么做",
+          "positive_docids": [
+            "4e03cafe88598761ff92b27028082610",
+            "a6f89752f30d22c8f01750fdf379a58a",
+            "ab3c8640f8022ed0a4055671d4f542e8",
+            "ec4f253187209c1c12b2cc0c5a2f0c5d",
+            "f9208e3030279414373a087592935c04"
+          ],
+          "top10_docids": [
+            "4801b2dbf9c534b05b35983dc114d86e",
+            "9f3e17e9d8469072e54edd53acd47b3e",
+            "34b474b1489b784789305e14a13c36a4",
+            "bf84e5d8414271532e8e947387a0f132",
+            "bc4c7743a83ed573c019cf3772c66215",
+            "ab7528b2e5d9679b37ae31f02791800d",
+            "dd39113eca0eaba473adc4007344f4b2",
+            "63883201af00fe7f43e90a3b1b52b6a2",
+            "d690786a17c2213ee9c06d286f77cee2",
+            "3829ddface97609d0ba75bc980cff0e6"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "均瑶集团是上市公司吗",
+          "positive_docids": [
+            "164dc7a955bd7cd1f952e3dec0d29afa",
+            "534e284ad58fa8d3b3bc3a773e9740d6",
+            "8494766de10401004bbc59d4ceba94cc"
+          ],
+          "top10_docids": [
+            "7d1fc4197bf351e24f547006b73fc582",
+            "67938fd6e440ab3d38e022c7ba4a5fde",
+            "5960495c7ace46c59864861fc4871310",
+            "8b3fe3f6b7d9af09bbb75e4a18aa403d",
+            "835e30085dc5a9d5f8881fe4ce0ed662",
+            "4944de0a249a1ce56a89ea1dee5f0b00",
+            "03598ae7739d2dea225668996af024e3",
+            "bf0d66fa1bd0d997d4ce8b055fdd2140",
+            "8f003888df98763b472dfe469d756a26",
+            "90b577bd21ae4ad3d74a2971ced658f8"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "微信不提示升级",
+          "positive_docids": [
+            "1a944d064f362b811adba6a9a9fc8991",
+            "31e8652dd42d184b042fde05055d0b10"
+          ],
+          "top10_docids": [
+            "d30fd48800fee90c34266781c2c4695e",
+            "9958ef035dcc07a8063deae87e61566f",
+            "741e10541d5a35a6139977fef749e065",
+            "a41b1518db0a0980f03d71bb391b04c8",
+            "001d9ad7d48596365532aa8fca0a44d9",
+            "910d7ea5815466c2c363b6fa93e60b76",
+            "156fb5ae957301e5b6a55359a0606776",
+            "c00e05b4c332d652aff4bd0f20c0bbe0",
+            "16cbe289ac90e0fe8ece37eab2a7c10c",
+            "39730176ac239027919d090701d64251"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "泰拉瑞亚叶绿套和乌龟套哪个好",
+          "positive_docids": [
+            "a8c9196ef0ebb87db8bc7652a1358599"
+          ],
+          "top10_docids": [
+            "5ef1a698483e761b223b1f0e4317f319",
+            "b727ffb28e0595d03e03142f673b914d",
+            "f37a9d332a106134d679f97eed8940d5",
+            "6583bac992d6cafc1ab80969f97773f1",
+            "f91cf88edd601305b0593111eab1074d",
+            "a05379b0fb1b0a4bab3965491282dac1",
+            "53638afaaef5506b26463f4c41c2fb2f",
+            "b62b8e7d30fb5f4a7e37d04b7f941e7e",
+            "107b5be17e613c9d891a800b506f34da",
+            "98889bc8250444e9dbd286548688c7c0"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "淘宝助理图片搬家慢",
+          "positive_docids": [
+            "3d6663f644a84e3751f68fa7503a4ca8",
+            "6ee7ac0e8e07742ca0e0e428a44ef535"
+          ],
+          "top10_docids": [
+            "336ec246f23e2be156210fe105ac70d3",
+            "11841980de5ad7a3a19f52192ff80dd4",
+            "b4f65b043ec2e985896d6ef7f3c7abe7",
+            "3eccda03801339b5316ff9800aeb5117",
+            "e2db3c3c3e5f04df29f6e048bf86a513",
+            "906e4aabf506375d068dd8d6f5d03785",
+            "572b76e42f28e25f3b6c7699dd720a80",
+            "e330e5cdce687c15be45848b0f9eb8ba",
+            "96483cf188478b95ad3f08bc74c0b517",
+            "d321f8748ecda3fe85e199b1d34cd53e"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "怎样识别电位器型号",
+          "positive_docids": [
+            "6511bdd8a88f83b06dae2d7ee2dbef7e"
+          ],
+          "top10_docids": [
+            "ada557ba22ae1c7a6fd01d18c731d1e0",
+            "7ad7532aee8c5847530703d87843b130",
+            "871b89adb59561b4bdee97d71e4f1ca0",
+            "82d067d285ae6c83e68e82a9578466a3",
+            "79897ae8709025728e9f4615e46b71e7",
+            "c4ebb4a92e0dbb3de325b32ff9ef07e5",
+            "4f201fa9b45e19124df3b7d799159af0",
+            "f36e9349897c89bd68e905c2de56cc63",
+            "130c371f82de84581ff409718334a19e",
+            "c3e6c9d39b6589acdc71bc95df50d1fe"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "苹果手机抖屏怎么办",
+          "positive_docids": [
+            "7e918f70a13955da20fa127c3741592c"
+          ],
+          "top10_docids": [
+            "cd04ec78f9bcbc963a0cbfa72180cda7",
+            "6e4e408374c2d01c1a4368a81b6d99f9",
+            "ef7fd345fa618435765fc0c53d3835b0",
+            "e6e73667e6e9898abdcedb4eb9ba1e5c",
+            "cc65ba63af4f7a11816f9892ccd7ea30",
+            "7c855eb377ae95b83f232702ed20c7e6",
+            "846d88f86c53ea48a6a95c3877334258",
+            "4d0ccee99adee50bd48272a90393916b",
+            "7b49c7fb5593d4beb7c67b8060a5a238",
+            "ed2699ea8eb7aa702524a7285b3da117"
+          ],
+          "applied_profile": "baseline"
+        }
+      ]
+    },
+    "hybrid_rerank": {
+      "total_samples": 200,
+      "evaluated_samples": 180,
+      "skipped_samples": 20,
+      "mean_candidates": 47.98888888888889,
+      "mrr@10": 0.3993077601410937,
+      "recall@1": 0.2777777777777778,
+      "recall@5": 0.5722222222222222,
+      "recall@10": 0.75,
+      "recall@20": 0.9,
+      "recall@50": 1.0,
+      "rerank_used_ratio": 0.0,
+      "degraded_ratio": 1.0,
+      "applied_profile_counts": {
+        "baseline": 180
+      },
+      "failure_examples": [
+        {
+          "query": "国家法定节假日共多少天",
+          "positive_docids": [
+            "1132b79d0bc37fc0d6f975904a8c0343",
+            "2c4fe63d3378ac39907b6b2648eb40c5",
+            "5bc347ff17d488f1704e2893c9e8ecfa",
+            "6e67389d07da8ce02ed97167d23baf9d"
+          ],
+          "top10_docids": [
+            "ea412c7366ba5d52b0e26487ac1d79f1",
+            "f794a6dc6c26ba7a64d14ddfea5954ff",
+            "24fe7952c6ca57cb585dd21262289890",
+            "0b35c2ffdf8ca8b82b7e98a52de3c6d9",
+            "93d7a7af323ed0584ea7af798400e422",
+            "a0ac26837aef3497f4fe08b6243b8eed",
+            "7775fbe10f220aef8e5e6247b6d0f9f9",
+            "58c00697311c9ad6eb384b6fca7bd12d",
+            "af404c0e301d9bab9e021197882e5ae8",
+            "4db2d64ea8cb87db9bc7aec3030a2b94"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "哪个网站有湖南卫视直播",
+          "positive_docids": [
+            "09047f2d4d9485eb1da4ae8486fd7e6d",
+            "64f962153f5572a3f3734d4e3ee64159"
+          ],
+          "top10_docids": [
+            "bc10cfb6bcae9df321839c0846242574",
+            "31a96bd83ada9510b0ecb6ffe4088925",
+            "7a4238810b79fe52f9645b335938dc09",
+            "a297032590bd5defa66acc602ef951b5",
+            "93847a2f5ea63e5ec2cabfff449dbbd2",
+            "54c7619e35ea2581060d9ddb88326630",
+            "ddc67410adca9a06a605fc9338d081ee",
+            "ef8b2f56a140666b2b09a6294f97ab13",
+            "ccd4948fc03a43f256e7e6296727cfa2",
+            "0ed2c01ed37eee0ea3eea64d4966c242"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "覆铜面板是什么",
+          "positive_docids": [
+            "0045f9336bac80891ea597253ea218cf",
+            "80226037b2d33bf1d961e2dfe5319d97",
+            "ab9eb95e10cc4dec4953d68a996ac825"
+          ],
+          "top10_docids": [
+            "0c16dc4c82e2a2206babc2864cf9b45a",
+            "ae7679e056d3b9262b0efc3678ec3788",
+            "69c3ec844cd417e51e4a1f1abd7af72b",
+            "0a652dd01b0146b6b6fdbd4045563670",
+            "f4eeef97b195a38a45434cc5e6e4fcb1",
+            "0dca6af7ea233f2931c562f1cd2e7842",
+            "3babb065d41d1b2fe906680d6a81b2b5",
+            "7ed00bbf467536801a3fe30a4776dafb",
+            "9ca869caa3f489e14b6b4e887795eeea",
+            "952beb302ca0cb8ada661621875116ea"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "怎么屏蔽qq新闻弹窗",
+          "positive_docids": [
+            "5ec4a2a6689550e67ad1bbe54f473edb",
+            "de75182f37a37e29f98dfbf69ba59086"
+          ],
+          "top10_docids": [
+            "31cd7c34a425f4e3a0601eaf4c27d069",
+            "dfa74998336b5bef01921041e4a90601",
+            "46a26ea2ee278348d01d190501685c36",
+            "5facdbd71bd3329c8d6c625e981a9009",
+            "8e0bb395f32833b8b624f24d710aab76",
+            "46e4badb5bd7d6465e09818ce3a0882a",
+            "0bdde12f43ee94a663f1370f4c4c2875",
+            "9ac6726a916688ba882549e3e524c350",
+            "efd5a27985a926d3bffd5ba102faad61",
+            "46d0337d09e728063b80e23dd23d95d9"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "艾滋病潜伏期能治吗",
+          "positive_docids": [
+            "a4d72abaef4e15029c0249bdcbc4734c"
+          ],
+          "top10_docids": [
+            "639028d4b8401ae6ec373a0dc0d4277b",
+            "3d4802ec3883e1e60ec2acada46d2ffb",
+            "504bae4daef9d9c5f4ced52aec4437e3",
+            "a4b77353be22397abcb48ba459ea0032",
+            "acccf198cb8d6f53a0d851901995b08f",
+            "e88f701a6584f28e3d712aa4f25c1766",
+            "f2ea57e4b0995aa98a0eb859ccd423df",
+            "2802c5f5b55b4548bf7edffc21693a81",
+            "77e638bf800155e474868ae56faef72b",
+            "7d39a011e46fe552122506c081407e45"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "子宫瘢痕向内凹陷形成一腔隙可以怀孕吗?",
+          "positive_docids": [
+            "854073b166651c4bcd81e77327796635",
+            "a163e676d4aacb81b61cafb02bfce966"
+          ],
+          "top10_docids": [
+            "150e72fa9ce3df0b82a9ef237732bb4b",
+            "bfb517b5e7b4f8850bccdfec07272c4a",
+            "ffb2da65084bb4963e2053462a815f99",
+            "2b7a7672289eebaaffccd74953934583",
+            "8b0b62c961b62172428f2affa0e659a7",
+            "a38cbf339429c95ddad2c19297954082",
+            "8bb80b324611379eac3e83ffb5000870",
+            "02c1c9abb231150db7025414abb044f6",
+            "f617aba38341906702b7d65a8956eecc",
+            "db139ff9db4c302b5a9f30b705edcdec"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "cad设计签名怎么弄上去的",
+          "positive_docids": [
+            "9999121d19a8ce057a9bf3dbaa4ffc93",
+            "a89682755d47e897847302dcb4812136",
+            "aaec1acd55cfe816d85ae0abe07df120"
+          ],
+          "top10_docids": [
+            "513ac5b0f853d12ca8799c39822cc5ac",
+            "7a610196a8972dcfcd32c9ee7addbdcf",
+            "c69581292aa3e0c56964fa9002f1b1fd",
+            "202d7b0b546af8bef5761512c7104009",
+            "49849a4fffa46b4bdc15d9d3d14dd9b6",
+            "7ddc6effd930bad84ea2f887434ad768",
+            "dc48d4c2517272d58b180576e71ed22b",
+            "599904240976a4ffdf447392862bc57e",
+            "e85a835d151b204d215e534891c09942",
+            "3633b024d9b1a6fc730290777e3b804a"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "eve回电是什么",
+          "positive_docids": [
+            "6dddded28d2d08edae67d48749bdc125"
+          ],
+          "top10_docids": [
+            "18d5851ab62a93238ac1a79c08915ba8",
+            "cb659150438bd71e84bd6d30432fd010",
+            "592415204ab575c28f07df8cdc54706e",
+            "a90d55a0d17ed2d74afde5f6cef9dfe8",
+            "6799ded9ba26636fdedf6b2c2ac2d368",
+            "25395446ad29977021e4d06930ec6eb7",
+            "ab4ea8d8467f21abe3300c5457c0ef27",
+            "2f114ef8b2d6b64dcd8356daa857e5c2",
+            "d0aedba01b8791ba3c6b873c11a39454",
+            "d9deecebb8312deffec5ff1d523071d6"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "windows media player不见了",
+          "positive_docids": [
+            "e1e3ea8e7282ac51615c57117076d2cd"
+          ],
+          "top10_docids": [
+            "a8b5a8ed7d78eafede6b19a2d9ee4974",
+            "73bdb6af51fc165213201e0d372d2bce",
+            "9c213501bfef69a10087debb09620133",
+            "f9930801a23515132fa8c449928f22a4",
+            "6ae403ccecb1d433ef16eaeb6fe984cc",
+            "509c57b76087fd3b88dcacc54c76c247",
+            "04612541eea014c94462f3d70697082e",
+            "fcffcae26a6b31991dcecbaf05f032de",
+            "7a6450ec47ba755cd4510bd1924b25d2",
+            "856ca8689b17d60be745c7b5efa86c2c"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "消灾吉祥神咒意思",
+          "positive_docids": [
+            "558fd4b68e78564b6cbfe93744a909c2"
+          ],
+          "top10_docids": [
+            "638965dda725aab509d0efaff5d0c558",
+            "85e45c56c2dcc0f2d45199c974c89c43",
+            "662bd8f2746fccfb13c8b301c797023c",
+            "6f7398ca482aff3df51b26f2a5f42f0f",
+            "714d1d0a3ddce2810304fd20b3f0d436",
+            "1bf0ce09c497246edfa90a5f9b6bc596",
+            "68dd47c0e677832ceea00b3cfff18bed",
+            "a13c8ca1d47b58a3fc4cc427140bef9c",
+            "d4094390810ecf8b7101702e19e63afe",
+            "bb9948abbd0c4f916084b2c493f967c7"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "excel表格右边没有边框",
+          "positive_docids": [
+            "6a61e8feb095f328575e1beb636ed4ad",
+            "b1c8cb19787c8ee53dfd437aa49ce1b4",
+            "b5e5be40ee70281813c583a7c55004f6"
+          ],
+          "top10_docids": [
+            "063589b6e55f6b7300d4ee74dc9f4c8d",
+            "59743e784b2630520fd81bafab8f315c",
+            "c7165daf928f8e3207b8329ad5896be6",
+            "64cc061a46c4f886e6381eb77886fc71",
+            "e6c26744caf7cb1aa5326d93854b792a",
+            "dffb86ed7da9dc2731a1e0ee20b04047",
+            "4ce29737a25a4579ebc5871249472e3b",
+            "7cf20bcda3a991c7799c4246159a7ba5",
+            "ea18410fdf87eb38cd958600bc89d200",
+            "1117c509f832350cd0d948ecd9b48a1a"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "辅酶q10的服用方法",
+          "positive_docids": [
+            "087fa453f6fe429d828bc2ec27d106d3",
+            "b8f24cc4dbc0ad22aa5a5e410f4444e8",
+            "df222de7616838757bcb75b255ec0011",
+            "fa69ab051d6d547bca654942ed9e3602"
+          ],
+          "top10_docids": [
+            "3b08de32eb7449a43e31b0e7ca0d8ec0",
+            "54df914f307f41d67c76fd805e055ac5",
+            "42a0da386945f61b5f6b2a4c654f11a7",
+            "438506349ab8c946c62c420b42ca085d",
+            "86eda662fc0f2850f3a12597ddbd2833",
+            "072b244d646c0fee61f8f5d531f6f1b0",
+            "2282c3c44641515e3cd8e7347571bc2d",
+            "8cb7e3815278d8b1225195d2163b9f2a",
+            "d561418d64247ea3bb84a66ca02ef84e",
+            "c341389b930f378bad04519b0b9c6dc0"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "加格达奇宾馆有哪些",
+          "positive_docids": [
+            "351f2fb65dfb879b48f46867cc8e1666"
+          ],
+          "top10_docids": [
+            "cf0350e1cda4ae8535fe017ac5939669",
+            "704a02769d5b459f8f2a715f5715e2af",
+            "7e422f203f4fabd112bcbb8047e31ff1",
+            "642b484c247471d7b01ae3cb50cffdd2",
+            "b60b440fd09cd15c30693740cced1610",
+            "32c2693ee5a54cbac0dca0f546142d43",
+            "bf5b1c94e3e3c282c76be0b7c10ae2ab",
+            "f45d06ddf4a234aa8109a773429ed010",
+            "8cc67de545762f447b8b2527bb38d173",
+            "fa03b6eaf3c11645a77bedfb4f5f9d0c"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "温泉蛋怎么做",
+          "positive_docids": [
+            "4e03cafe88598761ff92b27028082610",
+            "a6f89752f30d22c8f01750fdf379a58a",
+            "ab3c8640f8022ed0a4055671d4f542e8",
+            "ec4f253187209c1c12b2cc0c5a2f0c5d",
+            "f9208e3030279414373a087592935c04"
+          ],
+          "top10_docids": [
+            "4801b2dbf9c534b05b35983dc114d86e",
+            "9f3e17e9d8469072e54edd53acd47b3e",
+            "34b474b1489b784789305e14a13c36a4",
+            "bf84e5d8414271532e8e947387a0f132",
+            "bc4c7743a83ed573c019cf3772c66215",
+            "ab7528b2e5d9679b37ae31f02791800d",
+            "dd39113eca0eaba473adc4007344f4b2",
+            "63883201af00fe7f43e90a3b1b52b6a2",
+            "d690786a17c2213ee9c06d286f77cee2",
+            "3829ddface97609d0ba75bc980cff0e6"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "均瑶集团是上市公司吗",
+          "positive_docids": [
+            "164dc7a955bd7cd1f952e3dec0d29afa",
+            "534e284ad58fa8d3b3bc3a773e9740d6",
+            "8494766de10401004bbc59d4ceba94cc"
+          ],
+          "top10_docids": [
+            "7d1fc4197bf351e24f547006b73fc582",
+            "67938fd6e440ab3d38e022c7ba4a5fde",
+            "5960495c7ace46c59864861fc4871310",
+            "8b3fe3f6b7d9af09bbb75e4a18aa403d",
+            "835e30085dc5a9d5f8881fe4ce0ed662",
+            "4944de0a249a1ce56a89ea1dee5f0b00",
+            "03598ae7739d2dea225668996af024e3",
+            "bf0d66fa1bd0d997d4ce8b055fdd2140",
+            "8f003888df98763b472dfe469d756a26",
+            "90b577bd21ae4ad3d74a2971ced658f8"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "微信不提示升级",
+          "positive_docids": [
+            "1a944d064f362b811adba6a9a9fc8991",
+            "31e8652dd42d184b042fde05055d0b10"
+          ],
+          "top10_docids": [
+            "d30fd48800fee90c34266781c2c4695e",
+            "9958ef035dcc07a8063deae87e61566f",
+            "741e10541d5a35a6139977fef749e065",
+            "a41b1518db0a0980f03d71bb391b04c8",
+            "001d9ad7d48596365532aa8fca0a44d9",
+            "910d7ea5815466c2c363b6fa93e60b76",
+            "156fb5ae957301e5b6a55359a0606776",
+            "c00e05b4c332d652aff4bd0f20c0bbe0",
+            "16cbe289ac90e0fe8ece37eab2a7c10c",
+            "39730176ac239027919d090701d64251"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "泰拉瑞亚叶绿套和乌龟套哪个好",
+          "positive_docids": [
+            "a8c9196ef0ebb87db8bc7652a1358599"
+          ],
+          "top10_docids": [
+            "5ef1a698483e761b223b1f0e4317f319",
+            "b727ffb28e0595d03e03142f673b914d",
+            "f37a9d332a106134d679f97eed8940d5",
+            "6583bac992d6cafc1ab80969f97773f1",
+            "f91cf88edd601305b0593111eab1074d",
+            "a05379b0fb1b0a4bab3965491282dac1",
+            "53638afaaef5506b26463f4c41c2fb2f",
+            "b62b8e7d30fb5f4a7e37d04b7f941e7e",
+            "107b5be17e613c9d891a800b506f34da",
+            "98889bc8250444e9dbd286548688c7c0"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "淘宝助理图片搬家慢",
+          "positive_docids": [
+            "3d6663f644a84e3751f68fa7503a4ca8",
+            "6ee7ac0e8e07742ca0e0e428a44ef535"
+          ],
+          "top10_docids": [
+            "336ec246f23e2be156210fe105ac70d3",
+            "11841980de5ad7a3a19f52192ff80dd4",
+            "b4f65b043ec2e985896d6ef7f3c7abe7",
+            "3eccda03801339b5316ff9800aeb5117",
+            "e2db3c3c3e5f04df29f6e048bf86a513",
+            "906e4aabf506375d068dd8d6f5d03785",
+            "572b76e42f28e25f3b6c7699dd720a80",
+            "e330e5cdce687c15be45848b0f9eb8ba",
+            "96483cf188478b95ad3f08bc74c0b517",
+            "d321f8748ecda3fe85e199b1d34cd53e"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "怎样识别电位器型号",
+          "positive_docids": [
+            "6511bdd8a88f83b06dae2d7ee2dbef7e"
+          ],
+          "top10_docids": [
+            "ada557ba22ae1c7a6fd01d18c731d1e0",
+            "7ad7532aee8c5847530703d87843b130",
+            "871b89adb59561b4bdee97d71e4f1ca0",
+            "82d067d285ae6c83e68e82a9578466a3",
+            "79897ae8709025728e9f4615e46b71e7",
+            "c4ebb4a92e0dbb3de325b32ff9ef07e5",
+            "4f201fa9b45e19124df3b7d799159af0",
+            "f36e9349897c89bd68e905c2de56cc63",
+            "130c371f82de84581ff409718334a19e",
+            "c3e6c9d39b6589acdc71bc95df50d1fe"
+          ],
+          "applied_profile": "baseline"
+        },
+        {
+          "query": "苹果手机抖屏怎么办",
+          "positive_docids": [
+            "7e918f70a13955da20fa127c3741592c"
+          ],
+          "top10_docids": [
+            "cd04ec78f9bcbc963a0cbfa72180cda7",
+            "6e4e408374c2d01c1a4368a81b6d99f9",
+            "ef7fd345fa618435765fc0c53d3835b0",
+            "e6e73667e6e9898abdcedb4eb9ba1e5c",
+            "cc65ba63af4f7a11816f9892ccd7ea30",
+            "7c855eb377ae95b83f232702ed20c7e6",
+            "846d88f86c53ea48a6a95c3877334258",
+            "4d0ccee99adee50bd48272a90393916b",
+            "7b49c7fb5593d4beb7c67b8060a5a238",
+            "ed2699ea8eb7aa702524a7285b3da117"
+          ],
+          "applied_profile": "baseline"
+        }
+      ]
+    }
+  }
+}
