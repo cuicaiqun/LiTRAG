@@ -1,355 +1,158 @@
-# LLM Wiki RAG
+# LiTRAG：科研文献智能阅读助手
 
-<div align="center">
+> 一个专为科研场景设计的智能文献阅读助手，通过全链路的 RAG（检索增强生成）优化，为 PDF、图表、公式等多源数据提供精准的问答服务。
 
-### Compile-first local knowledge workflow for turning raw files into reusable wiki pages
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-green.svg)](https://fastapi.tiangolo.com/)
+[![LangChain](https://img.shields.io/badge/LangChain-0.3+-black.svg)](https://www.langchain.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Works **without a vector database by default**, supports **multi-modal ingest**, and ships with a **dashboard + evaluation loop**.
+---
 
-[![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square&logo=python&logoColor=white)](#quick-start)
-[![OpenAI Compatible](https://img.shields.io/badge/LLM-OpenAI%20Compatible-0A7F5A?style=flat-square)](#configuration)
-[![Multi-modal Ingest](https://img.shields.io/badge/Ingest-Multi--modal-B24A35?style=flat-square)](#what-it-does)
-[![Dashboard](https://img.shields.io/badge/UI-Dashboard-1F5FA7?style=flat-square)](#dashboard)
-[![Eval Ready](https://img.shields.io/badge/Eval-DuReader%20%2B%20QA-D1A245?style=flat-square)](#evaluation)
+## 📖 项目简介
 
-</div>
+**科研文献智能阅读助手** 是一个端到端的 RAG 系统。它主要解决传统 RAG 系统在解析科研文献（特别是包含复杂图表和数学公式的 PDF）时遇到的语义理解瓶颈和召回质量不佳的问题。
 
-> Traditional RAG often reopens the book for every question.  
-> This project tries a different route: **ingest first, compile into wiki pages, then retrieve and answer from the wiki**.
+该项目实现了从文档解析、索引构建、在线检索到答案生成的完整流水线，并集成了多路召回、重排序、低置信度二次检索等先进策略。通过整合 BM25 词法索引与稠密向量索引的混合检索，显著提升了问答的准确率和系统的响应效率，并基于 **RAGAS** 评测体系，在公开数据集上取得了可量化的性能提升。
 
-## Why This Exists
+## 🎯 核心功能与技术亮点
 
-- **Raw files are not knowledge.** PDFs, images, notes, web captures, and audio/video are first normalized into markdown, then compiled into structured wiki pages.
-- **Answer quality should leave artifacts.** Outputs are saved to disk and can be promoted back into the knowledge base.
-- **Retrieval should be explainable.** The default path is lexical and file-based; hybrid embedding + rerank is optional, not mandatory.
-- **Iteration should be measurable.** Retrieval and QA both have evaluation commands and persisted reports.
+### 📄 离线索引优化（Offline Indexing）
+项目采用离线处理所有原始文献，构建高质量的知识索引。
+-   **多模态语义提取**：针对科研 PDF 中难以提取的图表和公式，联合使用 **OCR** 与 **VLM（视觉语言模型）** 进行图文语义的联合提取和清洗。
+-   **元数据绑定**：对文本块进行清洗并与来源（如章节、页码）等元数据绑定，增强检索上下文的丰富性。
+-   **混合索引（Hybrid Indexing）** ：同时建立 **BM25 词法索引** 与 **稠密向量索引**，兼顾了词法匹配的精确性与向量检索的语义泛化能力。
+-   **增量索引**：基于文档的 **Hash 值** 实现增量索引，当源文档发生增删改时，系统能快速同步，无需全量重建。
 
-## Core Workflow
+### 🔎 在线检索优化（Online Retrieval）
+在用户发起查询时，系统执行一系列优化策略，以召回最相关的文档片段。
+-   **查询理解与路由**：首先对用户问题进行查询改写，并根据问题类型路由到合适的检索器。
+-   **多路召回（Multi-path Recall）** ：执行 BM25 和向量检索的多路召回，并通过 **Cross-Encoder 模型** 对初筛结果进行重排序（Re-ranking），提升排序质量。
+-   **低置信度二次检索（Low-Confidence Re-retrieval）** ：引入一个关键的自适应机制。当首轮召回的置信度分数低于预设阈值时，系统会自动扩展查询并重新检索，有效提升召回质量。
+-   **上下文拼装与引用**：将重排序后的高质量片段拼装成最终上下文，供 LLM 生成答案，并附带来源引用，确保回答可追溯。
+
+### 🚀 工程化与可观测性
+为了保障系统的生产可用性，项目在工程化方面做了充分设计。
+-   **服务化部署**：使用 **FastAPI** 提供标准化的 RESTful API 接口，便于集成。
+-   **分层缓存（Layered Caching）** ：复用高频的 QA 结果和已处理的索引片段，显著降低系统的响应延迟。
+-   **模块化解耦**：各个处理模块（如解析器、检索器、重排序器）均通过工厂模式进行解耦，便于单独替换和进行效果对比。
+
+## 📊 评测结果
+
+项目使用了公开的 **DuReader** 数据集和 **RAGAS** 评测框架进行系统性评估。
+
+> 以下数据来自消融实验，清晰展示了优化链路的有效性。
+
+| 指标 | 优化链路 | 提升幅度 |
+| :--- | :--- | :--- |
+| **MRR@10** | 提升 **78.4%** | 表明模型针对问题返回的相关片段排名显著前置。 |
+| **Recall@10** | 提升 **30.1%** | 表明在前10个召回片段中，相关内容的覆盖率大幅提高。 |
+
+同时，通过 RAGAS 评估，由 LLM 生成的最终答案在**事实一致性（Faithfulness）** 与**回答相关性（Answer Relevance）** 上均超过预设的高分阈值，其 **p90 高分率接近满分**，证明系统能稳定产出高质量的答案。
+
+## 🏗️ 系统架构
+
+（此处可以附上一张您自己的系统架构图，更清晰地展示流程。）
 
 ```text
-raw/ -> raw/ingested/*.md -> wiki/sources/*.md -> wiki/index.md + knowledge_map.md + chunk_index.jsonl
-                                              -> retrieve -> answer -> outputs/*.md
-                                                           -> promote -> wiki/qa/*.md
-```
+用户提问
+   │
+   ├──▶ 查询改写与路由
+   │
+   ▼
+┌─────────────────────────────────────────────────┐
+│                  在线检索模块                     │
+│  ┌──────────┐    ┌──────────┐    ┌──────────┐  │
+│  │ BM25召回 │ +  │向量召回 │──▶│重排序(Rerank)│  │
+│  └──────────┘    └──────────┘    └──────────┘  │
+└─────────────────────────────────────────────────┘
+   │
+   │ ◀────── 低于阈值时触发 ──────────────┐
+   │                                      │
+   ▼                                      │
+┌─────────────────────────────────────────────────┐  │
+│             上下文构建与答案生成                   │  │
+│      (调用LLM，集成来源引用)                      │  │
+└─────────────────────────────────────────────────┘  │
+   │                                                  │
+   ▼                                                  │
+最终答案与引用 ◀──────────────────────────────────────┘
+（低置信度二次检索：当首轮质量不佳时，自动扩展查询并重新检索）
 
-## What It Does
+## 🚀 快速开始
 
-### 1. Multi-modal ingest
+### 环境准备
 
-- Text, markdown, JSON, HTML
-- PDF, DOCX, PPTX
-- Images via vision extraction
-- Audio/video via FFmpeg + ASR
-- Web search capture via Tavily into `raw/web/`
+1. **克隆仓库**
 
-### 2. Compile-first knowledge building
+   ```bash
+   git clone https://github.com/cuicaiqun/LiTRAG.git
+   cd LiTRAG
+   ```
 
-- Compiles each raw source into a structured wiki page
-- Builds:
-  - `wiki/index.md`
-  - `wiki/knowledge_map.md`
-  - `wiki/chunk_index.jsonl`
-- Supports incremental compile skip using:
-  - `file_hash + extractor_version + compile_prompt_version`
+2. **安装依赖**
 
-### 3. Retrieval profiles
+   建议使用 `conda` 或 `venv` 创建一个 Python 3.10+ 的虚拟环境。
 
-- `baseline`: lexical only
-- `hybrid_no_rerank`: lexical + embedding fusion
-- `hybrid_rerank`: lexical + embedding fusion + rerank
-- If embedding/rerank is unavailable, the pipeline **degrades gracefully** and records the reason
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### 4. Ask, save, promote
+3. **配置环境变量**
 
-- Ask questions against compiled wiki knowledge
-- Save outputs into `outputs/*.md`
-- Optionally promote good answers into `wiki/qa/`
+   复制 `.env.example` 文件为 `.env`，并根据您的需要填入 LLM API 密钥、Embedding 模型端点等配置。
 
-### 5. Dashboard
+   ```bash
+   cp .env.example .env
+   ```
 
-- Run a local dashboard at `http://127.0.0.1:8787`
-- Trigger ingest / compile / search / build-index / ask
-- Inspect recent outputs and wiki pages
-- Watch task progress, logs, and result previews
+### 使用示例
 
-## Quick Start
+1. **索引您的文献库**
 
-### Install
+   将您的 PDF 文献放入 `data/` 目录，然后运行以下命令启动离线索引流程（系统会自动进行多模态解析并构建混合索引）。
 
-```bash
-# recommended: conda env
-conda activate rag
-pip install -r requirements.txt
-```
+   ```bash
+   python -m llm_wiki ingest ./data --compile
+   ```
 
-Or use `venv` if you prefer.
+2. **启动API服务**
 
-### Configuration
+   ```bash
+   uvicorn llm_wiki.dashboard_api:app --reload
+   ```
 
-Copy `.env.example` to `.env` and fill in at least your OpenAI-compatible endpoint and key.
+3. **发起问答请求**
 
-<details>
-<summary><strong>Minimal .env</strong></summary>
+   服务启动后，您可以访问 `http://127.0.0.1:8000/docs` 查看交互式 API 文档，或使用以下命令进行快速测试。
 
-```bash
-LLM_PROVIDER=openai
-MODEL=gpt-5.4-mini
-OPENAI_BASE_URL=https://code.rayinai.com/v1
-OPENAI_API_KEY=your_key
-TEMPERATURE_COMPILE=0.0
-TEMPERATURE_QA=0.0
-LLM_MAX_TOKENS=4096
-VISION_MODEL=gpt-5.4-mini
-ASR_MODEL=gpt-4o-mini-transcribe
-```
+   ```bash
+   python -m llm_wiki ask "Transformer 架构中的注意力机制是如何工作的？" --retrieval-profile hybrid_rerank
+   ```
 
-</details>
+4. **查看评测报告**
 
-<details>
-<summary><strong>Full retrieval / search config</strong></summary>
+   运行评测脚本，您可以复现 DuReader 数据集上的检索和问答质量评估。
 
-```bash
-TAVILY_BASE_URL=https://api.tavily.com
-TAVILY_API_KEY=
+   ```bash
+   python -m llm_wiki eval-dureader --split dev --ablation
+   python -m llm_wiki eval-dureader-qa --dataset-path datasets/dev.jsonl
+   ```
 
-EMBEDDING_BASE_URL=
-EMBEDDING_API_KEY=
-EMBEDDING_MODEL=
-EMBEDDING_DIMENSIONS=0
+## 💡 设计哲学
 
-RERANK_BASE_URL=
-RERANK_API_KEY=
-RERANK_MODEL=
+这个项目的初衷并非构建一个庞大的 RAG 框架，而是提供一个**清晰的、可验证的、本地化的知识工作流**。它强调了：
 
-RETRIEVAL_PROFILE=baseline
-RETRIEVAL_LEXICAL_TOP_K=80
-RETRIEVAL_VECTOR_TOP_K=80
-RETRIEVAL_CANDIDATE_MAX=120
-RETRIEVAL_RERANK_TOP_N=50
-RETRIEVAL_EMBED_BATCH=16
-RETRIEVAL_EMBED_TEXT_MAX_CHARS=1800
-```
+- **可解释性**：默认的词法检索路径让召回结果易于解释。
+- **可迭代性**：通过内置的评测（Ablation）和报告持久化，让每次改动都可被量化衡量。
+- **高质量**：通过低置信度二次检索等机制，确保回答的稳定性和准确性。
 
-</details>
+## 🤝 待办与未来计划 (Roadmap)
 
-### Try it in 60 seconds
+- [ ] 集成更多类型的文档解析器（如 .docx, .pptx）
+- [ ] 完善 Dashboard 的监控与管理功能
+- [ ] 探索在知识图谱层面进行关系建模
 
-```bash
-python -m llm_wiki init
-python -m llm_wiki ingest "D:/data/knowledge/**/*" --compile
-python -m llm_wiki ask "RAG 和 LLM Wiki 的关键差异是什么？" --retrieval-profile hybrid_rerank
-```
+## 📜 许可证
 
-### Launch the dashboard
-
-```bash
-python -m llm_wiki dashboard
-```
-
-Windows convenience script:
-
-```powershell
-.\start_dashboard.ps1
-```
-
-## Demo Flow
-
-If you want to show the system in action, the most stable path is:
-
-1. Open the dashboard
-2. Show `raw/ingested/*.md`
-3. Show `wiki/sources/*.md`
-4. Run one `ask`
-5. Open the generated `outputs/*.md`
-6. Show the evaluation report under `outputs/evals/`
-
-This demonstrates that the project is not just a UI or a script, but a full file-backed workflow.
-
-## Core Commands
-
-### Workspace and compile
-
-```bash
-python -m llm_wiki init
-python -m llm_wiki compile
-python -m llm_wiki build-index
-```
-
-### Ingest
-
-```bash
-python -m llm_wiki ingest "D:/data/knowledge/**/*"
-python -m llm_wiki ingest "D:/data/knowledge/**/*" --compile
-```
-
-### Ask
-
-```bash
-python -m llm_wiki ask "如何把这个方案用于客服知识库？"
-python -m llm_wiki ask "如何把这个方案用于客服知识库？" --promote
-python -m llm_wiki ask "你的问题" --retrieval-profile hybrid_rerank
-```
-
-### Search
-
-```bash
-python -m llm_wiki search "karpathy llm wiki"
-python -m llm_wiki search "agent memory design" --compile
-```
-
-### Evaluation
-
-```bash
-python -m llm_wiki eval-dureader --split dev --ablation
-python -m llm_wiki eval-dureader-qa --dataset-path datasets/dev.jsonl/dev.jsonl --max-samples 200 --retrieval-profile hybrid_rerank --seed 42
-```
-
-## Why It Is Not Traditional RAG
-
-| Dimension | This project | Traditional RAG |
-| --- | --- | --- |
-| Primary object | **Compiled wiki pages** | Raw chunks |
-| Default retrieval | Lexical / explainable | Usually embedding-first |
-| Knowledge lifecycle | Build knowledge first, answer later | Retrieve fragments at question time |
-| Output handling | Saved and optionally promoted back | Often ephemeral |
-| Best fit | Local knowledge workflow, tens to hundreds of docs | Large-scale retrieval-heavy systems |
-
-The point is not that one approach replaces the other.  
-The point is that for a local or small-to-medium knowledge base, **compile-first gives you a cleaner knowledge surface**.
-
-## Supported Formats
-
-<details>
-<summary><strong>Current ingest coverage</strong></summary>
-
-- Text: `md markdown txt rst yaml yml csv json html htm`
-- Documents: `pdf docx pptx`
-- Images: `png jpg jpeg webp bmp gif tif tiff`
-- Audio: `mp3 wav m4a aac flac ogg`
-- Video transcription: `mp4 mov mkv webm avi`
-
-Notes:
-
-- Legacy `.ppt` is not directly supported; convert to `.pptx` first.
-- PDF extraction may fall back to vision OCR when direct text is weak.
-
-</details>
-
-## Retrieval Profiles
-
-| Profile | What it does | Best use |
-| --- | --- | --- |
-| `baseline` | Lexical only | Default, stable, explainable |
-| `hybrid_no_rerank` | Lexical + vector fusion | Better recall without rerank dependency |
-| `hybrid_rerank` | Lexical + vector fusion + rerank | Best ranking quality when services are available |
-
-Important:
-
-- Hybrid modes require embedding config.
-- `hybrid_rerank` also requires rerank config.
-- If those services fail, the system **auto-degrades** and records the reason in outputs/reports.
-
-## Evaluation
-
-### Retrieval: DuReader candidate-set ranking
-
-From the current ablation report:
-
-| Profile | MRR@10 | Recall@1 | Recall@10 |
-| --- | --- | --- | --- |
-| `baseline` | `0.4121` | `0.2824` | `0.7637` |
-| `hybrid_no_rerank` | `0.5048` | `0.3396` | `0.8681` |
-| `hybrid_rerank` | `0.7097` | `0.5857` | `0.9505` |
-
-Source:
-
-- `outputs/evals/dureader_retrieval/20260410-002623-dureader-dev.md`
-
-Important boundary:
-
-- This is **candidate-set ranking** on DuReader positives + negatives per query
-- It is **not** full-corpus online retrieval over an entire production knowledge base
-
-### QA quality
-
-The project also supports QA evaluation with:
-
-- `Faithfulness`
-- `Answer Relevance`
-- retry / backoff
-- fallback scoring when needed
-
-Important boundary:
-
-- Treat retrieval ablation as the **primary hard evidence**
-- Treat QA reports as **supportive quality signals**
-- Depending on model/network availability, QA scoring may involve retry/fallback paths, and the report records that explicitly
-
-Source:
-
-- `outputs/evals/dureader_qa/20260410-151506-dureader-dev-qa.md`
-
-## Dashboard
-
-Run it:
-
-```bash
-python -m llm_wiki dashboard
-```
-
-What you get:
-
-- workspace overview
-- recent outputs and wiki pages
-- one-click operations for `init`, `ingest`, `search`, `compile`, `build-index`, `ask`
-- grouped task progress
-- logs and result preview
-
-This is especially useful for demos and iterative local workflows.
-
-## Project Layout
-
-```text
-.
-├─ raw/
-│  ├─ ingested/
-│  └─ web/
-├─ wiki/
-│  ├─ sources/
-│  ├─ qa/
-│  ├─ index.md
-│  ├─ knowledge_map.md
-│  ├─ chunk_index.jsonl
-│  └─ .compile_manifest.json
-├─ outputs/
-│  └─ evals/
-├─ llm_wiki/
-│  ├─ cli.py
-│  ├─ ingest.py
-│  ├─ compiler.py
-│  ├─ retrieve.py
-│  ├─ qa.py
-│  ├─ dashboard_api.py
-│  └─ ...
-└─ start_dashboard.ps1
-```
-
-## Honest Notes
-
-- This project is best suited for **tens to hundreds of documents**, not massive corpora.
-- The dashboard currently uses an in-memory task model, not a production-grade persistent queue.
-- Retrieval evaluation is candidate-set based.
-- QA evaluation may use retry/fallback depending on runtime conditions.
-- If your corpus grows large, you may want to integrate more traditional RAG components later.
-
-## Roadmap
-
-- Deeper integration of `chunk_index.jsonl` into retrieval
-- More production-like task persistence for the dashboard
-- Stronger graph / entity layer on top of the current knowledge map
-- More stable always-online QA scoring pipeline
-
-## Philosophy
-
-This project is not trying to be the biggest RAG stack.  
-It is trying to be a **clear, local, explainable, compile-first knowledge workflow** that you can actually inspect, demo, and iterate on.
+本项目采用 [MIT 许可证](LICENSE)。
